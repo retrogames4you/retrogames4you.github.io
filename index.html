@@ -22,7 +22,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Rubik,system-ui
 a{color:var(--cyan)}
 a:focus-visible,button:focus-visible,label:focus-within{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
 .ra-wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-@media (max-width:600px){.ra-wrap{padding:0 16px}}
+@media (max-width:600px){.ra-wrap{padding:0 16px}.ra-logo .ra-pixel{display:none}.ra-lang button{padding:4px 7px;font-size:.72rem}}
 .ra-pixel{font-family:"Press Start 2P",monospace;letter-spacing:.02em}
 
 /* header */
@@ -31,7 +31,7 @@ header.ra-top{border-bottom:1px solid var(--line);background:rgba(18,16,31,.9);p
 .ra-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
 .ra-logo .ra-pixel{font-size:.85rem}
 .ra-lang{margin-left:auto;display:flex;border:1px solid var(--line);border-radius:999px;padding:3px}
-.ra-lang button{border:0;background:none;color:var(--soft);font:inherit;font-size:.8rem;font-weight:700;padding:4px 10px;border-radius:999px;cursor:pointer}
+.ra-lang button{border:0;background:none;color:var(--soft);font:inherit;font-size:.8rem;font-weight:700;padding:4px 9px;border-radius:999px;cursor:pointer}
 .ra-lang button[aria-pressed="true"]{background:var(--amber);color:var(--bg)}
 
 /* hero with a faint CRT scanline texture */
@@ -102,9 +102,13 @@ footer p{margin:6px 0;max-width:80ch}
 <header class="ra-top">
   <div class="ra-wrap">
     <a class="ra-logo" href="#top"><svg width="26" height="26" viewBox="0 0 16 16" aria-hidden="true"><rect width="16" height="16" rx="3" fill="#221E3B"/><rect x="3" y="4" width="10" height="6" fill="#FFB000"/><rect x="5" y="11" width="2" height="2" fill="#3FE0D0"/><rect x="9" y="11" width="2" height="2" fill="#3FE0D0"/></svg><span class="ra-pixel">RETRO ARCADE</span></a>
-    <div class="ra-lang" role="group" aria-label="Taal / Language">
+    <div class="ra-lang" role="group" aria-label="Taal / Language / Langue / Sprache / Idioma">
       <button type="button" data-lang="nl" aria-pressed="true">NL</button>
       <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="de" aria-pressed="false">DE</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      <button type="button" data-lang="pt" aria-pressed="false">PT</button>
     </div>
   </div>
 </header>
@@ -185,6 +189,7 @@ footer p{margin:6px 0;max-width:80ch}
 <footer>
   <div class="ra-wrap">
     <p data-i18n="foot.legal">Alle spellen in de speelhal zijn door hun makers vrijgegeven als freeware, open source of shareware die vrij verspreid mag worden. De licentie staat bij elk spel. Merken en namen zijn eigendom van hun respectieve eigenaars.</p>
+    <p class="ra-visits" id="visits" hidden><strong id="visit-count"></strong> <span data-i18n="visits">bezoekers</span> · <span data-i18n="foot.stats">Bezoekers worden anoniem geteld met GoatCounter, zonder cookies.</span></p>
     <p><span data-i18n="foot.engine">Emulator:</span> <a href="https://github.com/caiiiycuk/js-dos">js-dos</a> (<a href="vendor/js-dos/NOTICE.txt">GPL-2.0</a>, <span data-i18n="foot.engine2">gebaseerd op DOSBox</span>) · <a href="https://www.scummvm.org">ScummVM</a> (<a href="scummvm/NOTICE.txt">GPL-2.0+</a>) · fflate (<a href="vendor/fflate/LICENSE">MIT</a>)</p>
   </div>
 </footer>
@@ -224,8 +229,9 @@ const T = {
   "player.full":"Volledig scherm","player.close":"Sluiten",
   "player.help":"Klik eerst in het beeld zodat het spel je toetsen ontvangt. Esc verlaat volledig scherm.",
   "card.play":"Spelen","card.soon":"Binnenkort","card.license":"Licentie","card.visit":"Naar de website",
-  "cat.all":"Alles","cat.adventure":"Point & click","cat.shooter":"Shooters","cat.platform":"Platform","cat.action":"Vechten & actie","cat.racing":"Racen","cat.arcade":"Arcade & sport","cat.puzzle":"Puzzel & bordspel",
-  "links.title":"Gratis downloads & online","links.intro":"Moderne gratis spellen die je op je eigen computer installeert of online speelt. Ze draaien niet in deze speelhal; de knop brengt je naar de officiële website."
+  "cat.all":"Alles","cat.adventure":"Avontuur & RPG","cat.shooter":"Shooters","cat.platform":"Platform","cat.action":"Vechten & actie","cat.racing":"Racen","cat.arcade":"Arcade & sport","cat.puzzle":"Puzzel & strategie",
+  "links.title":"Gratis downloads & online","thumb.alt":"Schermafbeelding van ","foot.stats":"Bezoekers worden anoniem geteld met GoatCounter, zonder cookies.","visits":"bezoekers",
+  "links.intro":"Moderne gratis spellen die je op je eigen computer installeert of online speelt. Ze draaien niet in deze speelhal; de knop brengt je naar de officiële website."
  },
  en:{
   "hero.title":"Insert coin.",
@@ -248,12 +254,17 @@ const T = {
   "player.full":"Full screen","player.close":"Close",
   "player.help":"Click inside the picture first so the game receives your keys. Esc leaves full screen.",
   "card.play":"Play","card.soon":"Coming soon","card.license":"Licence","card.visit":"Visit website",
-  "cat.all":"All","cat.adventure":"Point & click","cat.shooter":"Shooters","cat.platform":"Platform","cat.action":"Fighting & action","cat.racing":"Racing","cat.arcade":"Arcade & sports","cat.puzzle":"Puzzle & board",
-  "links.title":"Free downloads & online","links.intro":"Modern free games you install on your own computer or play online. They don\u2019t run in this arcade; the button takes you to the official website."
- }
+  "cat.all":"All","cat.adventure":"Adventure & RPG","cat.shooter":"Shooters","cat.platform":"Platform","cat.action":"Fighting & action","cat.racing":"Racing","cat.arcade":"Arcade & sports","cat.puzzle":"Puzzle & strategy",
+  "links.title":"Free downloads & online","thumb.alt":"Screenshot of ","foot.stats":"Visits are counted anonymously with GoatCounter, without cookies.","visits":"visitors",
+  "links.intro":"Modern free games you install on your own computer or play online. They don\u2019t run in this arcade; the button takes you to the official website."
+ },
+ fr:{ "hero.title": "Insert coin.", "hero.lead": "Des jeux PC classiques de l’époque DOS, directement dans votre navigateur. Pas d’installation, pas de téléchargement : cliquez et jouez.", "hero.note": "Seuls les jeux que leurs créateurs ont rendus gratuits sont proposés ici. Vous avez encore un vieux jeu ? Jouez à votre propre exemplaire ci-dessous.", "games.title": "Salle d’arcade", "games.intro": "Cliquez sur Jouer. Le jeu démarre dans une fenêtre ; utilisez le clavier et cliquez dans l’image quand la souris est nécessaire.", "games.empty": "Les premiers jeux seront bientôt ajoutés.", "soon.title": "Bientôt", "soon.intro": "Ces titres ont été vérifiés et peuvent être distribués librement. Ils seront ajoutés dès que les fichiers originaux seront prêts.", "own.title": "Jouez à votre propre jeu", "own.intro": "Vous avez encore un vieux jeu DOS, sur un CD ou dans un dossier de votre ordinateur ? Jouez-y ici. Le fichier reste sur votre appareil : rien n’est envoyé ni enregistré.", "own.s1": "Mettez le dossier du jeu dans un fichier .zip.", "own.s2": "Choisissez le fichier .zip avec le bouton (ou glissez-le dans le cadre).", "own.s3": "Choisissez le programme qui lance le jeu, généralement un .EXE ou un .BAT.", "own.s4": "Cliquez sur Jouer.", "own.pick": "Choisir un fichier .zip", "own.start": "Programme de démarrage", "own.play": "Jouer", "own.prompt": "Invite DOS (lancer vous-même)", "own.reading": "Lecture du fichier…", "own.ready": "Prêt : programmes exécutables trouvés : {n}.", "own.none": "Aucun .EXE, .COM ou .BAT trouvé. Vous pouvez quand même l’ouvrir et lancer le jeu vous-même depuis l’invite DOS.", "own.bad": "Ce fichier ne semble pas être un .zip valide.", "own.bundle": "Paquet js-dos détecté : prêt à jouer.", "foot.legal": "Tous les jeux de la salle d’arcade ont été rendus disponibles par leurs créateurs comme freeware, open source ou shareware librement distribuable. La licence est indiquée pour chaque jeu. Les marques et noms appartiennent à leurs propriétaires respectifs.", "support.title": "Soutenez l’arcade", "support.body": "Tous les jeux restent gratuits. Vous voulez aider à garder l’arcade en ligne et à ajouter de nouveaux classiques ? Un petit don via Ko-fi fait la différence.", "support.btn": "Offrez-nous un café sur Ko-fi", "foot.engine": "Émulateur :", "foot.engine2": "basé sur DOSBox", "player.full": "Plein écran", "player.close": "Fermer", "player.help": "Cliquez d’abord dans l’image pour que le jeu reçoive vos touches. Échap quitte le plein écran.", "card.play": "Jouer", "card.soon": "Bientôt", "card.license": "Licence", "card.visit": "Visiter le site", "cat.all": "Tout", "cat.adventure": "Aventure & RPG", "cat.shooter": "Tir", "cat.platform": "Plates-formes", "cat.action": "Combat & action", "cat.racing": "Course", "cat.arcade": "Arcade & sport", "cat.puzzle": "Réflexion & stratégie", "links.title": "Téléchargements gratuits & en ligne", "links.intro": "Des jeux modernes gratuits à installer sur votre ordinateur ou à jouer en ligne. Ils ne tournent pas dans cette arcade ; le bouton mène au site officiel.", "thumb.alt": "Capture d’écran de ", "foot.stats":"Les visites sont comptées anonymement avec GoatCounter, sans cookies.","visits": "visiteurs" },
+ de:{ "hero.title": "Insert coin.", "hero.lead": "Klassische PC-Spiele aus der DOS-Zeit, direkt im Browser. Keine Installation, keine Downloads: klicken und spielen.", "hero.note": "Hier gibt es nur Spiele, die ihre Macher freigegeben haben. Haben Sie selbst noch ein altes Spiel? Spielen Sie Ihr eigenes Exemplar weiter unten.", "games.title": "Spielhalle", "games.intro": "Klicken Sie auf Spielen. Das Spiel startet in einem Fenster; nutzen Sie die Tastatur und klicken Sie ins Bild, wenn die Maus gebraucht wird.", "games.empty": "Die ersten Spiele kommen bald.", "soon.title": "Demnächst", "soon.intro": "Diese Titel wurden geprüft und dürfen frei verbreitet werden. Sie kommen hinzu, sobald die Originaldateien bereitstehen.", "own.title": "Ihr eigenes Spiel spielen", "own.intro": "Haben Sie noch ein altes DOS-Spiel, etwa auf CD oder in einem Ordner auf Ihrem Computer? Spielen Sie es hier. Die Datei bleibt auf Ihrem Gerät: Nichts wird hochgeladen oder gespeichert.", "own.s1": "Packen Sie den Spielordner in eine .zip-Datei.", "own.s2": "Wählen Sie die .zip-Datei mit der Schaltfläche (oder ziehen Sie sie in das Feld).", "own.s3": "Wählen Sie das Programm, das das Spiel startet, meist eine .EXE oder .BAT.", "own.s4": "Klicken Sie auf Spielen.", "own.pick": ".zip-Datei wählen", "own.start": "Startprogramm", "own.play": "Spielen", "own.prompt": "DOS-Eingabeaufforderung (selbst starten)", "own.reading": "Datei wird gelesen…", "own.ready": "Bereit: startbare Programme gefunden: {n}.", "own.none": "Keine .EXE, .COM oder .BAT gefunden. Sie können die Datei trotzdem öffnen und das Spiel selbst über die DOS-Eingabeaufforderung starten.", "own.bad": "Das scheint keine gültige .zip-Datei zu sein.", "own.bundle": "js-dos-Paket erkannt: bereit zum Spielen.", "foot.legal": "Alle Spiele in der Spielhalle wurden von ihren Machern als Freeware, Open Source oder frei verbreitbare Shareware veröffentlicht. Die Lizenz steht bei jedem Spiel. Marken und Namen gehören ihren jeweiligen Eigentümern.", "support.title": "Unterstützen Sie die Arcade", "support.body": "Alle Spiele bleiben kostenlos. Möchten Sie helfen, die Spielhalle online zu halten und neue Klassiker hinzuzufügen? Eine kleine Spende über Ko-fi macht den Unterschied.", "support.btn": "Spendieren Sie uns einen Kaffee auf Ko-fi", "foot.engine": "Emulator:", "foot.engine2": "basiert auf DOSBox", "player.full": "Vollbild", "player.close": "Schließen", "player.help": "Klicken Sie zuerst ins Bild, damit das Spiel Ihre Tasten empfängt. Esc beendet den Vollbildmodus.", "card.play": "Spielen", "card.soon": "Demnächst", "card.license": "Lizenz", "card.visit": "Zur Website", "cat.all": "Alle", "cat.adventure": "Abenteuer & RPG", "cat.shooter": "Shooter", "cat.platform": "Jump ’n’ Run", "cat.action": "Kampf & Action", "cat.racing": "Rennen", "cat.arcade": "Arcade & Sport", "cat.puzzle": "Denken & Strategie", "links.title": "Kostenlose Downloads & online", "links.intro": "Moderne kostenlose Spiele zum Installieren auf Ihrem Computer oder zum Online-Spielen. Sie laufen nicht in dieser Spielhalle; die Schaltfläche führt zur offiziellen Website.", "thumb.alt": "Bildschirmfoto von ", "foot.stats":"Besuche werden anonym mit GoatCounter gezählt, ohne Cookies.","visits": "Besucher" },
+ es:{ "hero.title": "Insert coin.", "hero.lead": "Juegos clásicos de PC de la era DOS, directamente en tu navegador. Sin instalar, sin descargas: haz clic y juega.", "hero.note": "Aquí solo hay juegos que sus creadores han liberado gratis. ¿Aún tienes un juego antiguo? Juega con tu propia copia más abajo.", "games.title": "Salón recreativo", "games.intro": "Haz clic en Jugar. El juego se abre en una ventana; usa el teclado y haz clic dentro de la imagen cuando haga falta el ratón.", "games.empty": "Los primeros juegos llegarán pronto.", "soon.title": "Próximamente", "soon.intro": "Estos títulos se han comprobado y pueden distribuirse libremente. Se añadirán en cuanto estén listos los archivos originales.", "own.title": "Juega con tu propio juego", "own.intro": "¿Aún tienes un juego DOS antiguo, por ejemplo en un CD o en una carpeta de tu ordenador? Juega aquí. El archivo se queda en tu dispositivo: no se sube ni se guarda nada.", "own.s1": "Pon la carpeta del juego en un archivo .zip.", "own.s2": "Elige el archivo .zip con el botón (o arrástralo al recuadro).", "own.s3": "Elige el programa que inicia el juego, normalmente un .EXE o .BAT.", "own.s4": "Haz clic en Jugar.", "own.pick": "Elegir un archivo .zip", "own.start": "Programa de inicio", "own.play": "Jugar", "own.prompt": "Símbolo de DOS (iniciar tú mismo)", "own.reading": "Leyendo archivo…", "own.ready": "Listo: programas ejecutables encontrados: {n}.", "own.none": "No se ha encontrado ningún .EXE, .COM o .BAT. Aun así puedes abrirlo e iniciar el juego tú mismo desde el símbolo de DOS.", "own.bad": "Esto no parece un archivo .zip válido.", "own.bundle": "Paquete js-dos detectado: listo para jugar.", "foot.legal": "Todos los juegos del salón fueron liberados por sus creadores como freeware, código abierto o shareware de libre distribución. La licencia aparece en cada juego. Las marcas y nombres pertenecen a sus respectivos propietarios.", "support.title": "Apoya el salón", "support.body": "Todos los juegos siguen siendo gratis. ¿Quieres ayudar a mantener el salón en línea y añadir nuevos clásicos? Un pequeño donativo en Ko-fi marca la diferencia.", "support.btn": "Invítanos a un café en Ko-fi", "foot.engine": "Emulador:", "foot.engine2": "basado en DOSBox", "player.full": "Pantalla completa", "player.close": "Cerrar", "player.help": "Haz clic primero dentro de la imagen para que el juego reciba tus teclas. Esc sale de la pantalla completa.", "card.play": "Jugar", "card.soon": "Próximamente", "card.license": "Licencia", "card.visit": "Ir a la web", "cat.all": "Todo", "cat.adventure": "Aventura y rol", "cat.shooter": "Disparos", "cat.platform": "Plataformas", "cat.action": "Lucha y acción", "cat.racing": "Carreras", "cat.arcade": "Arcade y deportes", "cat.puzzle": "Puzles y estrategia", "links.title": "Descargas gratuitas y en línea", "links.intro": "Juegos modernos gratuitos para instalar en tu ordenador o jugar en línea. No funcionan en este salón; el botón te lleva a la web oficial.", "thumb.alt": "Captura de pantalla de ", "foot.stats":"Las visitas se cuentan de forma anónima con GoatCounter, sin cookies.","visits": "visitantes" },
+ pt:{ "hero.title": "Insert coin.", "hero.lead": "Jogos clássicos de PC da era DOS, diretamente no seu navegador. Sem instalar, sem downloads: clique e jogue.", "hero.note": "Aqui só estão jogos que os seus criadores disponibilizaram gratuitamente. Ainda tem um jogo antigo? Jogue a sua própria cópia mais abaixo.", "games.title": "Salão de jogos", "games.intro": "Clique em Jogar. O jogo abre numa janela; use o teclado e clique dentro da imagem quando o rato for necessário.", "games.empty": "Os primeiros jogos serão adicionados em breve.", "soon.title": "Em breve", "soon.intro": "Estes títulos foram verificados e podem ser distribuídos livremente. Serão adicionados assim que os ficheiros originais estiverem prontos.", "own.title": "Jogue o seu próprio jogo", "own.intro": "Ainda tem um jogo DOS antigo, por exemplo num CD ou numa pasta do seu computador? Jogue-o aqui. O ficheiro fica no seu dispositivo: nada é enviado nem guardado.", "own.s1": "Coloque a pasta do jogo num ficheiro .zip.", "own.s2": "Escolha o ficheiro .zip com o botão (ou arraste-o para a caixa).", "own.s3": "Escolha o programa que inicia o jogo, normalmente um .EXE ou .BAT.", "own.s4": "Clique em Jogar.", "own.pick": "Escolher um ficheiro .zip", "own.start": "Programa de arranque", "own.play": "Jogar", "own.prompt": "Linha de comandos DOS (iniciar manualmente)", "own.reading": "A ler o ficheiro…", "own.ready": "Pronto: programas executáveis encontrados: {n}.", "own.none": "Nenhum .EXE, .COM ou .BAT encontrado. Mesmo assim pode abri-lo e iniciar o jogo na linha de comandos DOS.", "own.bad": "Isto não parece um ficheiro .zip válido.", "own.bundle": "Pacote js-dos detetado: pronto a jogar.", "foot.legal": "Todos os jogos do salão foram disponibilizados pelos seus criadores como freeware, código aberto ou shareware de distribuição livre. A licença é indicada em cada jogo. As marcas e nomes pertencem aos respetivos proprietários.", "support.title": "Apoie o salão", "support.body": "Todos os jogos continuam gratuitos. Quer ajudar a manter o salão online e a juntar novos clássicos? Um pequeno donativo no Ko-fi faz a diferença.", "support.btn": "Ofereça-nos um café no Ko-fi", "foot.engine": "Emulador:", "foot.engine2": "baseado no DOSBox", "player.full": "Ecrã inteiro", "player.close": "Fechar", "player.help": "Clique primeiro dentro da imagem para que o jogo receba as suas teclas. Esc sai do ecrã inteiro.", "card.play": "Jogar", "card.soon": "Em breve", "card.license": "Licença", "card.visit": "Ir para o site", "cat.all": "Tudo", "cat.adventure": "Aventura e RPG", "cat.shooter": "Tiros", "cat.platform": "Plataformas", "cat.action": "Luta e ação", "cat.racing": "Corridas", "cat.arcade": "Arcade e desporto", "cat.puzzle": "Puzzles e estratégia", "links.title": "Downloads gratuitos e online", "links.intro": "Jogos modernos gratuitos para instalar no seu computador ou jogar online. Não correm neste salão; o botão leva ao site oficial.", "thumb.alt": "Captura de ecrã de ", "foot.stats":"As visitas são contadas de forma anónima com o GoatCounter, sem cookies.","visits": "visitantes" }
 };
 let lang = "nl";
-const t = k => (T[lang] && T[lang][k]) || T.nl[k] || k;
+const t = k => (T[lang] && T[lang][k]) || T.en[k] || T.nl[k] || k;
 
 function applyLang(l){
   lang = T[l] ? l : "nl";
@@ -267,11 +278,11 @@ function applyLang(l){
 /* ---------- catalog ---------- */
 let CATALOG = { games: [], planned: [] };
 function el(tag, attrs, text){ const e = document.createElement(tag); if (attrs) for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; return e; }
-const loc = v => (v && typeof v === "object") ? (v[lang] || v.nl || "") : (v || "");
+const loc = v => (v && typeof v === "object") ? (v[lang] || v.en || v.nl || "") : (v || "");
 function card(g, playable){
   const c = el("article", { class: "ra-card" });
   if (g.thumb) {
-    const im = el("img", { class: "ra-thumb", src: g.thumb, alt: (lang === "nl" ? "Schermafbeelding van " : "Screenshot of ") + g.title, loading: "lazy", width: "400", height: "300" });
+    const im = el("img", { class: "ra-thumb", src: g.thumb, alt: t("thumb.alt") + g.title, loading: "lazy", width: "400", height: "300" });
     c.append(im);
   } else if (!g.link) {
     c.append(el("div", { class: "ra-thumb ra-thumb-ph", "aria-hidden": "true" }, g.title));
@@ -295,7 +306,7 @@ function card(g, playable){
       try {
         const r = await fetch(g.zip); if (!r.ok) throw new Error(r.status);
         const bytes = new Uint8Array(await r.arrayBuffer());
-        play({ title: g.title, bytes, startDir: g.dir || "", startCmd: g.start, autoexec: g.autoexec, keys: g.keys, unpack: g.unpack, extractAll: g.extractAll });
+        play({ title: g.title, bytes, startDir: g.dir || "", startCmd: g.start, autoexec: g.autoexec, keys: g.keys, unpack: g.unpack, extractAll: g.extractAll, files: g.files });
       } finally { b.disabled = false; }
     });
     c.append(b);
@@ -340,7 +351,7 @@ function dosboxConf(startDir, startCmd, autoexec){
   return lines.join("\n") + "\n";
 }
 let frame = null;
-function play({ title, url, bytes, startDir, startCmd, isBundle, autoexec, keys, unpack, extractAll, scummvm }){
+function play({ title, url, bytes, startDir, startCmd, isBundle, autoexec, keys, unpack, extractAll, files, scummvm }){
   stopDos();
   document.getElementById("player-title").textContent = title;
   if (scummvm) {
@@ -352,7 +363,7 @@ function play({ title, url, bytes, startDir, startCmd, isBundle, autoexec, keys,
     if (!dlg.open) dlg.showModal();
     return;
   }
-  const msg = { type: "run", keys, unpack, extractAll };
+  const msg = { type: "run", keys, unpack, extractAll, files };
   const transfer = [];
   if (url) msg.url = new URL(url, location.href).href;
   else {
@@ -462,6 +473,15 @@ document.querySelectorAll(".ra-lang button").forEach(b => b.addEventListener("cl
 })();
 window.__arcade = { get own(){ return own; }, get msg(){ return ownMsg; } };
 })();
+</script>
+<!-- Privacy-friendly visitor counter (GoatCounter: no cookies, no personal data stored) -->
+<script data-goatcounter="https://retrogames4you.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+  // Show the total number of visits (public counter enabled in GoatCounter's settings).
+  fetch("https://retrogames4you.goatcounter.com/counter/TOTAL.json")
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(d => { document.getElementById("visit-count").textContent = d.count; document.getElementById("visits").hidden = false; })
+    .catch(() => {});
 </script>
 </body>
 </html>

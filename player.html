@@ -52,6 +52,7 @@
     if (e.method === 0) return raw.slice();
     if (e.method === 8) return fflate.inflateSync(raw);
     if (e.method === 6) return explode(raw, e.usize, e.flags);
+    if (e.method === 1) return unshrink(raw, e.usize);
     throw new Error("Unsupported zip method " + e.method + " for " + e.name);
   }
 // PKWARE "implode" (zip method 6) decoder. Mirrors Info-ZIP explode.c (inverted-bit Huffman decoding).
@@ -91,6 +92,42 @@
     }
     return out;
   }
+  // PKWARE "shrink" (zip method 1): LZW with 9..13-bit codes and partial clearing.
+  function unshrink(src, usize) {
+    let pos = 0, bitbuf = 0, bitcnt = 0;
+    const getbits = n => { while (bitcnt < n) { bitbuf |= (pos < src.length ? src[pos] : 0) << bitcnt; pos++; bitcnt += 8; } const v = bitbuf & ((1 << n) - 1); bitbuf >>>= n; bitcnt -= n; return v; };
+    const MAX = 8192, parent = new Int32Array(MAX).fill(-1), value = new Uint8Array(MAX), used = new Uint8Array(MAX);
+    for (let i = 0; i < 256; i++) { used[i] = 1; value[i] = i; }
+    const out = new Uint8Array(usize); let op = 0, codesize = 9, next = 257;
+    const stack = new Uint8Array(MAX);
+    const firstOf = c => { while (parent[c] >= 0) c = parent[c]; return value[c]; };
+    const emit = c => { let sp = 0; while (c >= 0) { stack[sp++] = value[c]; c = parent[c]; } while (sp && op < usize) out[op++] = stack[--sp]; };
+    if (!usize) return out;
+    let old = getbits(codesize); out[op++] = old;
+    while (op < usize) {
+      const code = getbits(codesize);
+      if (code === 256) {
+        const sub = getbits(codesize);
+        if (sub === 1) codesize++;
+        else if (sub === 2) {
+          const isParent = new Uint8Array(MAX);
+          for (let c = 257; c < MAX; c++) if (used[c] && parent[c] >= 257) isParent[parent[c]] = 1;
+          for (let c = 257; c < MAX; c++) if (used[c] && !isParent[c]) { used[c] = 0; parent[c] = -1; }
+          next = 257; while (next < MAX && used[next]) next++;
+        }
+        continue;
+      }
+      let fc;
+      if (used[code]) { fc = firstOf(code); emit(code); }
+      else { fc = firstOf(old); emit(old); if (op < usize) out[op++] = fc; }
+      if (next < MAX) {
+        parent[next] = old; value[next] = fc; used[next] = 1;
+        while (next < MAX && used[next]) next++;
+      }
+      old = code;
+    }
+    return out;
+  }
   function zipExtract(u8, name) {
     const e = zipEntries(u8).find(x => x.name.toLowerCase() === name.toLowerCase());
     return e ? zipData(u8, e) : null;
@@ -107,7 +144,8 @@
       const archive = new Uint8Array(d.bytes);
       opts.initFs = [archive];
       // Archives packed with methods DOSBox can't read (e.g. 1988 "implode"): unpack them here instead.
-      if (d.extractAll) {
+      // With settings files we unpack here too, so those files reliably replace the originals they update.
+      if (d.extractAll || (Array.isArray(d.files) && d.files.length)) {
         opts.initFs = [];
         for (const e of zipEntries(archive)) {
           if (e.name.endsWith("/")) continue;
@@ -119,24 +157,43 @@
       // browser (what the game's own installer would do), e.g. One Must Fall's OMF21.EXE.
       if (Array.isArray(d.unpack)) {
         for (const u of d.unpack) {
-          const inner = zipExtract(archive, u.from);
+          // "from" may list several pieces that together form one archive (e.g. Heretic's HTIC_V12.1 + .2).
+          const pieces = [].concat(u.from).map(n => zipExtract(archive, n));
+          let inner = pieces[0];
+          if (pieces.length > 1 && pieces.every(Boolean)) {
+            inner = new Uint8Array(pieces.reduce((a, b) => a + b.length, 0));
+            let o = 0; for (const b of pieces) { inner.set(b, o); o += b.length; }
+          }
           if (!inner) continue;
           for (const e of zipEntries(inner)) {
             if (e.name.endsWith("/")) continue;
-            opts.initFs.push({ path: u.to + "/" + e.name, contents: zipData(inner, e) });
+            opts.initFs.push({ path: (u.to ? u.to + "/" : "") + e.name, contents: zipData(inner, e) });
           }
         }
+      }
+      // Optional small settings files, i.e. what the game's own setup program would have saved.
+      if (Array.isArray(d.files)) for (const f of d.files) {
+        opts.initFs = opts.initFs.filter(x => !(x.path && x.path.toUpperCase() === f.path.toUpperCase()));
+        opts.initFs.push({ path: f.path, contents: f.b64 ? Uint8Array.from(atob(f.b64), c => c.charCodeAt(0)) : new TextEncoder().encode(f.text) });
       }
       if (d.conf) opts.dosboxConf = d.conf;
     }
     // Optional scripted key presses, e.g. to accept an original installer's defaults.
-    if (Array.isArray(d.keys) && d.keys.length) {
-      opts.onEvent = (event, ci) => {
-        if (event !== "ci-ready") return;
+    opts.onEvent = (event, ci) => {
+      if (event !== "ci-ready") return;
+      window.__ci = ci;
+      if (Array.isArray(d.keys) && d.keys.length) {
         let t = 0;
-        d.keys.forEach(k => { t += k.wait || 0; setTimeout(() => ci.simulateKeyPress(...[].concat(k.key)), t); });
-      };
-    }
+        d.keys.forEach(k => {
+          t += k.wait || 0;
+          if (k.text) {  // type a command line, e.g. after an installer drops back to the prompt
+            for (const ch of k.text.toUpperCase()) { const c = ch === " " ? 32 : ch === "\\" ? 92 : ch === "." ? 46 : ch.charCodeAt(0); setTimeout(() => ci.simulateKeyPress(c), t); t += 120; }
+          } else if (k.hold) {  // some menus only notice a key that stays down a little longer
+            setTimeout(() => ci.sendKeyEvent(k.key, true), t); setTimeout(() => ci.sendKeyEvent(k.key, false), t + k.hold);
+          } else setTimeout(() => ci.simulateKeyPress(...[].concat(k.key)), t);
+        });
+      }
+    };
     Dos(document.getElementById("dos"), opts);
     window.focus();
   });
