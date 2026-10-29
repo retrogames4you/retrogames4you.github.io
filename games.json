@@ -587,6 +587,25 @@
       }
     },
     {
+      "id": "diabloweb",
+      "title": "Diablo (shareware-demo) in je browser",
+      "year": 1996,
+      "maker": "Blizzard · fanproject DiabloWeb",
+      "link": "https://d07riv.github.io/diabloweb/",
+      "genre": {
+        "nl": "Actie-RPG",
+        "en": "Action RPG"
+      },
+      "desc": {
+        "nl": "Het originele Diablo, speelbaar in de browser via het fanproject DiabloWeb. Gratis met de officiële shareware-demo; het volledige spel speel je met je eigen exemplaar (bv. van GOG).",
+        "en": "The original Diablo, playable in the browser through the fan project DiabloWeb. Free with the official shareware demo; play the full game with your own copy (e.g. from GOG)."
+      },
+      "license": {
+        "nl": "Fanproject, extern gehost; niet op deze site",
+        "en": "Fan project, hosted elsewhere; not on this site"
+      }
+    },
+    {
       "id": "freeciv",
       "title": "Freeciv",
       "year": 1996,
