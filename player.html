@@ -35,11 +35,12 @@
     const out = [];
     for (let n = 0; n < count; n++) {
       if (dv.getUint32(p, true) !== 0x02014b50) break;
-      const method = dv.getUint16(p + 10, true), csize = dv.getUint32(p + 20, true);
+      const flags = dv.getUint16(p + 8, true), method = dv.getUint16(p + 10, true);
+      const csize = dv.getUint32(p + 20, true), usize = dv.getUint32(p + 24, true);
       const nl = dv.getUint16(p + 28, true), xl = dv.getUint16(p + 30, true), cl = dv.getUint16(p + 32, true);
       const local = dv.getUint32(p + 42, true) + shift;
       let name = ""; for (let i = 0; i < nl; i++) name += String.fromCharCode(u8[p + 46 + i]);
-      out.push({ name, method, csize, local });
+      out.push({ name, flags, method, csize, usize, local });
       p += 46 + nl + xl + cl;
     }
     return out;
@@ -50,7 +51,45 @@
     const raw = u8.subarray(start, start + e.csize);
     if (e.method === 0) return raw.slice();
     if (e.method === 8) return fflate.inflateSync(raw);
+    if (e.method === 6) return explode(raw, e.usize, e.flags);
     throw new Error("Unsupported zip method " + e.method + " for " + e.name);
+  }
+// PKWARE "implode" (zip method 6) decoder. Mirrors Info-ZIP explode.c (inverted-bit Huffman decoding).
+  function explode(src, usize, flags) {
+    const big = (flags & 2) !== 0, lit = (flags & 4) !== 0;
+    let pos = 0, bitbuf = 0, bitcnt = 0;
+    const need = n => { while (bitcnt < n) { bitbuf |= (pos < src.length ? src[pos] : 0) << bitcnt; pos++; bitcnt += 8; } };
+    const getbits = n => { need(n); const v = bitbuf & ((1 << n) - 1); bitbuf >>>= n; bitcnt -= n; return v; };
+    function readLengths(n) {
+      const count = src[pos++] + 1, lens = [];
+      for (let i = 0; i < count; i++) { const b = src[pos++]; const len = (b & 15) + 1, rep = (b >> 4) + 1; for (let k = 0; k < rep; k++) lens.push(len); }
+      if (lens.length !== n) throw new Error("bad tree " + lens.length + "/" + n);
+      return lens;
+    }
+    function makeDecoder(lens) {
+      // canonical codes (shortest first, by symbol), read MSB-first with every bit inverted
+      const maxLen = Math.max(...lens), blCount = new Array(maxLen + 1).fill(0);
+      lens.forEach(l => blCount[l]++);
+      const next = new Array(maxLen + 2).fill(0); let code = 0;
+      for (let b = 1; b <= maxLen; b++) { code = (code + blCount[b - 1]) << 1; next[b] = code; }
+      const map = new Map();
+      lens.forEach((l, s) => { map.set(l + ":" + next[l]++, s); });
+      return () => { let c = 0; for (let l = 1; l <= maxLen; l++) { c = (c << 1) | (getbits(1) ^ 1); const s = map.get(l + ":" + c); if (s !== undefined) return s; } throw new Error("bad code"); };
+    }
+    const litDec = lit ? makeDecoder(readLengths(256)) : null;
+    const lenDec = makeDecoder(readLengths(64));
+    const distDec = makeDecoder(readLengths(64));
+    const out = new Uint8Array(usize); let op = 0;
+    const dbits = big ? 7 : 6, minLen = lit ? 3 : 2;
+    while (op < usize) {
+      if (getbits(1)) out[op++] = lit ? litDec() : getbits(8);
+      else {
+        const low = getbits(dbits); const dist = ((distDec() << dbits) | low) + 1;
+        let len = lenDec(); if (len === 63) len += getbits(8); len += minLen;
+        for (let i = 0; i < len && op < usize; i++, op++) out[op] = op - dist >= 0 ? out[op - dist] : 0;
+      }
+    }
+    return out;
   }
   function zipExtract(u8, name) {
     const e = zipEntries(u8).find(x => x.name.toLowerCase() === name.toLowerCase());
@@ -67,6 +106,15 @@
     else {
       const archive = new Uint8Array(d.bytes);
       opts.initFs = [archive];
+      // Archives packed with methods DOSBox can't read (e.g. 1988 "implode"): unpack them here instead.
+      if (d.extractAll) {
+        opts.initFs = [];
+        for (const e of zipEntries(archive)) {
+          if (e.name.endsWith("/")) continue;
+          try { opts.initFs.push({ path: e.name, contents: zipData(archive, e) }); }
+          catch (err) { console.warn("skipped", e.name, err.message); }
+        }
+      }
       // Optional: unpack a self-extracting installer from the original archive here in the
       // browser (what the game's own installer would do), e.g. One Must Fall's OMF21.EXE.
       if (Array.isArray(d.unpack)) {

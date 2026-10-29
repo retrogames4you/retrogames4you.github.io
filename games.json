@@ -126,6 +126,134 @@
       }
     },
     {
+      "id": "maddog",
+      "title": "The Adventures of Maddog Williams",
+      "year": 1992,
+      "maker": "Game Crafters",
+      "zip": "games/maddog/mdwfull.zip",
+      "start": "MADDOG",
+      "cat": "adventure",
+      "genre": {
+        "nl": "Avontuur (tekst + graphics)",
+        "en": "Adventure (text + graphics)"
+      },
+      "desc": {
+        "nl": "Sierra-achtig avontuur: Maddog Williams moet de kerkers van Duridian doorkruisen.",
+        "en": "Sierra-style adventure: Maddog Williams must cross the dungeons of Duridian."
+      },
+      "controls": {
+        "nl": "Pijltjes lopen, commando's intikken (bv. LOOK).",
+        "en": "Arrows walk, type commands (e.g. LOOK)."
+      },
+      "license": {
+        "nl": "Freeware (Game Crafters): vrij te kopiëren en door te geven, compleet en onveranderd.",
+        "en": "Freeware (Game Crafters): free to copy and pass on, complete and unmodified."
+      }
+    },
+    {
+      "id": "zzt",
+      "title": "ZZT (Town of ZZT)",
+      "year": 1991,
+      "maker": "Tim Sweeney / Epic MegaGames",
+      "zip": "games/zzt/1zzt32.zip",
+      "start": "ZZT",
+      "cat": "adventure",
+      "keys": [
+        {
+          "wait": 4000,
+          "key": 75
+        },
+        {
+          "wait": 800,
+          "key": 67
+        }
+      ],
+      "genre": {
+        "nl": "Avontuur / puzzel",
+        "en": "Adventure / puzzle"
+      },
+      "desc": {
+        "nl": "Het eerste spel van Tim Sweeney, oprichter van Epic Games: avonturen in tekst-graphics, met ingebouwde editor. Officiële shareware-wereld Town of ZZT.",
+        "en": "The first game by Tim Sweeney, founder of Epic Games: text-mode adventures with a built-in editor. Official shareware world Town of ZZT."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen, Shift + pijl schieten, P spelen.",
+        "en": "Arrows move, Shift + arrow shoot, P play."
+      },
+      "license": {
+        "nl": "Officiële shareware van Epic MegaGames: gratis verspreiding toegestaan (niet via de winkel). Origineel archief, onveranderd.",
+        "en": "Official Epic MegaGames shareware: free distribution allowed (not through retail). Original archive, unmodified."
+      },
+      "extractAll": true
+    },
+    {
+      "id": "superzzt",
+      "title": "Super ZZT",
+      "year": 1992,
+      "maker": "Tim Sweeney / Epic MegaGames",
+      "zip": "games/superzzt/superz.zip",
+      "start": "SUPERZ",
+      "cat": "adventure",
+      "keys": [
+        {
+          "wait": 4000,
+          "key": 75
+        },
+        {
+          "wait": 800,
+          "key": 67
+        }
+      ],
+      "genre": {
+        "nl": "Avontuur / puzzel",
+        "en": "Adventure / puzzle"
+      },
+      "desc": {
+        "nl": "Het vervolg op ZZT met grotere, scrollende werelden.",
+        "en": "The sequel to ZZT with larger, scrolling worlds."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen, Shift + pijl schieten, P spelen.",
+        "en": "Arrows move, Shift + arrow shoot, P play."
+      },
+      "license": {
+        "nl": "Epic MegaGames-licentie: gratis verspreiding toegestaan (niet via de winkel). Origineel archief, onveranderd.",
+        "en": "Epic MegaGames licence: free distribution allowed (not through retail). Original archive, unmodified."
+      }
+    },
+    {
+      "id": "catacomb",
+      "title": "Catacomb",
+      "year": 1990,
+      "maker": "John Carmack / Softdisk",
+      "zip": "games/catacomb/gameedge.zip",
+      "start": "CATACOMB",
+      "cat": "adventure",
+      "dir": "CATACOMB",
+      "keys": [
+        {
+          "wait": 5000,
+          "key": 69
+        }
+      ],
+      "genre": {
+        "nl": "Actie-avontuur",
+        "en": "Action adventure"
+      },
+      "desc": {
+        "nl": "Vroeg spel van John Carmack (later DOOM): een tovenaar in een doolhof vol monsters.",
+        "en": "Early game by John Carmack (later DOOM): a wizard in a maze full of monsters."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen, Ctrl vuurbal.",
+        "en": "Arrows move, Ctrl fireball."
+      },
+      "license": {
+        "nl": "Gratis promotiespel van Softdisk's Gamer's Edge, nooit verkocht. Origineel archief, onveranderd.",
+        "en": "Free promotional game from Softdisk's Gamer's Edge, never sold. Original archive, unmodified."
+      }
+    },
+    {
       "id": "doom",
       "title": "DOOM (shareware, episode 1)",
       "year": 1993,
@@ -282,6 +410,119 @@
       }
     },
     {
+      "id": "xerix",
+      "title": "Xerix",
+      "year": 1992,
+      "maker": "Twilight Software",
+      "zip": "games/xerix/xerix.zip",
+      "cat": "shooter",
+      "genre": {
+        "nl": "Shoot-'em-up",
+        "en": "Shoot-'em-up"
+      },
+      "desc": {
+        "nl": "Verticale ruimteshooter uit Australië (1992).",
+        "en": "Vertical space shooter from Australia (1992)."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen, Ctrl/spatie vuren. De setup wordt automatisch ingevuld.",
+        "en": "Arrows move, Ctrl/Space fire. The setup is filled in automatically."
+      },
+      "license": {
+        "nl": "Volgens de maker 'public domain or FreeWare': vrij te kopiëren in de originele, onveranderde vorm.",
+        "en": "Per the author 'public domain or FreeWare': free to copy in its original, unmodified form."
+      },
+      "autoexec": [
+        "XINSTALL",
+        "XERIX"
+      ],
+      "keys": [
+        {
+          "wait": 3000,
+          "key": 49
+        },
+        {
+          "wait": 1200,
+          "key": 49
+        },
+        {
+          "wait": 1200,
+          "key": 49
+        },
+        {
+          "wait": 1200,
+          "key": 48
+        },
+        {
+          "wait": 1200,
+          "key": 48
+        },
+        {
+          "wait": 1200,
+          "key": 48
+        },
+        {
+          "wait": 1200,
+          "key": 48
+        },
+        {
+          "wait": 1500,
+          "key": 51
+        }
+      ]
+    },
+    {
+      "id": "kiloblaster",
+      "title": "Kiloblaster",
+      "year": 1992,
+      "maker": "Allen Pilgrim / Epic MegaGames",
+      "zip": "games/kiloblaster/Kiloblaster_v2_Commercial.zip",
+      "start": "KILO",
+      "cat": "shooter",
+      "dir": "KILOBL~1",
+      "genre": {
+        "nl": "Shoot-'em-up",
+        "en": "Shoot-'em-up"
+      },
+      "desc": {
+        "nl": "Alle drie de episodes van deze snelle Galaga-achtige shooter.",
+        "en": "All three episodes of this fast Galaga-style shooter."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen, spatie vuren (zie hulp in het spel).",
+        "en": "Arrows move, Space fire (see in-game help)."
+      },
+      "license": {
+        "nl": "Freeware sinds 2008 door maker Allen Pilgrim (vrij te gebruiken).",
+        "en": "Freeware since 2008 by its author Allen Pilgrim (free to use)."
+      }
+    },
+    {
+      "id": "astrofire",
+      "title": "AstroFire",
+      "year": 1994,
+      "maker": "ORT Software",
+      "zip": "games/astrofire/af_full.zip",
+      "start": "ASTRO",
+      "cat": "shooter",
+      "genre": {
+        "nl": "Shooter",
+        "en": "Shooter"
+      },
+      "desc": {
+        "nl": "Asteroids-achtige shooter met moderne VGA-graphics.",
+        "en": "Asteroids-style shooter with modern VGA graphics."
+      },
+      "controls": {
+        "nl": "Pijltjes draaien/stuwen, spatie vuren.",
+        "en": "Arrows rotate/thrust, Space fire."
+      },
+      "license": {
+        "nl": "Freeware, vrijgegeven door ORT Software (2013). Origineel archief, onveranderd.",
+        "en": "Freeware, released by ORT Software (2013). Original archive, unmodified."
+      }
+    },
+    {
       "id": "cyberdogs",
       "title": "Cyberdogs",
       "year": 1994,
@@ -363,6 +604,540 @@
       "cat": "platform"
     },
     {
+      "id": "keen4",
+      "title": "Commander Keen 4: Secret of the Oracle",
+      "year": 1991,
+      "maker": "id Software / Apogee",
+      "zip": "games/keen4/4keen.zip",
+      "cat": "platform",
+      "autoexec": [
+        "INSTALL",
+        "cls",
+        "KEEN4E"
+      ],
+      "keys": [
+        {
+          "wait": 5000,
+          "key": 257
+        },
+        {
+          "wait": 2500,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        }
+      ],
+      "genre": {
+        "nl": "Platformspel",
+        "en": "Platformer"
+      },
+      "desc": {
+        "nl": "Commander Keen 4: Secret of the Oracle, het hoogtepunt van de Keen-reeks. Bij het starten draait eerst het originele installatieprogramma; druk zo nodig op Enter.",
+        "en": "Commander Keen 4: Secret of the Oracle, the high point of the Keen series. On start the original installer runs first; press Enter if it waits."
+      },
+      "controls": {
+        "nl": "Pijltjes lopen, Ctrl springen, Alt pogo, spatie schieten.",
+        "en": "Arrows walk, Ctrl jump, Alt pogo, Space shoot."
+      },
+      "license": {
+        "nl": "Officiële shareware-episode van id Software / Apogee, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
+        "en": "Official shareware episode by id Software / Apogee, freely distributable in its original form. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "duke1",
+      "title": "Duke Nukem (episode 1)",
+      "year": 1991,
+      "maker": "Apogee Software",
+      "zip": "games/duke1/1duke.zip",
+      "cat": "platform",
+      "autoexec": [
+        "INSTALL",
+        "cls",
+        "DN1"
+      ],
+      "keys": [
+        {
+          "wait": 5000,
+          "key": 257
+        },
+        {
+          "wait": 2500,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        }
+      ],
+      "genre": {
+        "nl": "Platformspel",
+        "en": "Platformer"
+      },
+      "desc": {
+        "nl": "Het allereerste Duke Nukem (1991), episode 1: Shrapnel City. Bij het starten draait eerst het originele installatieprogramma; druk zo nodig op Enter.",
+        "en": "The very first Duke Nukem (1991), episode 1: Shrapnel City. On start the original installer runs first; press Enter if it waits."
+      },
+      "controls": {
+        "nl": "Pijltjes lopen, Ctrl springen, Alt schieten.",
+        "en": "Arrows walk, Ctrl jump, Alt shoot."
+      },
+      "license": {
+        "nl": "Officiële shareware-episode van Apogee, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
+        "en": "Official shareware episode by Apogee, freely distributable in its original form. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "duke2",
+      "title": "Duke Nukem II (episode 1)",
+      "year": 1993,
+      "maker": "Apogee Software",
+      "zip": "games/duke2/4duke.zip",
+      "cat": "platform",
+      "autoexec": [
+        "INSTALL",
+        "cls",
+        "NUKEM2"
+      ],
+      "keys": [
+        {
+          "wait": 5000,
+          "key": 257
+        },
+        {
+          "wait": 2500,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        }
+      ],
+      "genre": {
+        "nl": "Platformspel",
+        "en": "Platformer"
+      },
+      "desc": {
+        "nl": "Duke Nukem II (1993), episode 1, in VGA. Bij het starten draait eerst het originele installatieprogramma; druk zo nodig op Enter.",
+        "en": "Duke Nukem II (1993), episode 1, in VGA. On start the original installer runs first; press Enter if it waits."
+      },
+      "controls": {
+        "nl": "Pijltjes lopen, Ctrl springen, Alt schieten.",
+        "en": "Arrows walk, Ctrl jump, Alt shoot."
+      },
+      "license": {
+        "nl": "Officiële shareware-episode van Apogee, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
+        "en": "Official shareware episode by Apogee, freely distributable in its original form. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "crystalcaves",
+      "title": "Crystal Caves (episode 1)",
+      "year": 1991,
+      "maker": "Apogee Software",
+      "zip": "games/crystalcaves/1cc10a.zip",
+      "cat": "platform",
+      "autoexec": [
+        "INSTALL",
+        "cls",
+        "CC1"
+      ],
+      "keys": [
+        {
+          "wait": 5000,
+          "key": 257
+        },
+        {
+          "wait": 2500,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        }
+      ],
+      "genre": {
+        "nl": "Platformspel",
+        "en": "Platformer"
+      },
+      "desc": {
+        "nl": "Mylo Steamwitz zoekt kristallen in de grotten van een vreemde planeet. Bij het starten draait eerst het originele installatieprogramma; druk zo nodig op Enter.",
+        "en": "Mylo Steamwitz hunts crystals in the caves of an alien planet. On start the original installer runs first; press Enter if it waits."
+      },
+      "controls": {
+        "nl": "Pijltjes lopen, Ctrl springen, Alt schieten.",
+        "en": "Arrows walk, Ctrl jump, Alt shoot."
+      },
+      "license": {
+        "nl": "Officiële shareware-episode van Apogee, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
+        "en": "Official shareware episode by Apogee, freely distributable in its original form. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "secretagent",
+      "title": "Secret Agent (episode 1)",
+      "year": 1992,
+      "maker": "Apogee Software",
+      "zip": "games/secretagent/1sa10a.zip",
+      "cat": "platform",
+      "autoexec": [
+        "INSTALL",
+        "cls",
+        "SAM1"
+      ],
+      "keys": [
+        {
+          "wait": 5000,
+          "key": 257
+        },
+        {
+          "wait": 2500,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        }
+      ],
+      "genre": {
+        "nl": "Platformspel",
+        "en": "Platformer"
+      },
+      "desc": {
+        "nl": "Geheim agent 006 dringt een eilandbasis binnen. Bij het starten draait eerst het originele installatieprogramma; druk zo nodig op Enter.",
+        "en": "Secret agent 006 infiltrates an island base. On start the original installer runs first; press Enter if it waits."
+      },
+      "controls": {
+        "nl": "Pijltjes lopen, Ctrl springen, Alt schieten.",
+        "en": "Arrows walk, Ctrl jump, Alt shoot."
+      },
+      "license": {
+        "nl": "Officiële shareware-episode van Apogee, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
+        "en": "Official shareware episode by Apogee, freely distributable in its original form. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "cosmo",
+      "title": "Cosmo's Cosmic Adventure (episode 1)",
+      "year": 1992,
+      "maker": "Apogee Software",
+      "zip": "games/cosmo/1cosmo.zip",
+      "cat": "platform",
+      "autoexec": [
+        "INSTALL",
+        "cls",
+        "COSMO1"
+      ],
+      "keys": [
+        {
+          "wait": 5000,
+          "key": 257
+        },
+        {
+          "wait": 2500,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        }
+      ],
+      "genre": {
+        "nl": "Platformspel",
+        "en": "Platformer"
+      },
+      "desc": {
+        "nl": "Het buitenaardse jongetje Cosmo zoekt zijn ouders. Bij het starten draait eerst het originele installatieprogramma; druk zo nodig op Enter.",
+        "en": "Little alien Cosmo searches for his parents. On start the original installer runs first; press Enter if it waits."
+      },
+      "controls": {
+        "nl": "Pijltjes lopen, Ctrl springen, Alt bom.",
+        "en": "Arrows walk, Ctrl jump, Alt bomb."
+      },
+      "license": {
+        "nl": "Officiële shareware-episode van Apogee, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
+        "en": "Official shareware episode by Apogee, freely distributable in its original form. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "jill",
+      "title": "Jill of the Jungle (episode 1)",
+      "year": 1992,
+      "maker": "Epic MegaGames",
+      "zip": "games/jill/jill.zip",
+      "start": "JILL",
+      "cat": "platform",
+      "keys": [
+        {
+          "wait": 5000,
+          "key": 257
+        }
+      ],
+      "genre": {
+        "nl": "Platformspel",
+        "en": "Platformer"
+      },
+      "desc": {
+        "nl": "Jill verkent de jungle en verandert in dieren (1992).",
+        "en": "Jill explores the jungle and turns into animals (1992)."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen, Alt/spatie springen, Ctrl messen gooien.",
+        "en": "Arrows move, Alt/Space jump, Ctrl throw knives."
+      },
+      "license": {
+        "nl": "Officiële shareware-episode van Epic MegaGames: verspreiding in de originele vorm toegestaan. Origineel archief, onveranderd.",
+        "en": "Official Epic MegaGames shareware episode: distribution in its original form allowed. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "captaincomic",
+      "title": "The Adventures of Captain Comic",
+      "year": 1988,
+      "maker": "Michael A. Denio",
+      "zip": "games/captaincomic/ccomic5.zip",
+      "start": "COMIC",
+      "cat": "platform",
+      "extractAll": true,
+      "genre": {
+        "nl": "Platformspel",
+        "en": "Platformer"
+      },
+      "desc": {
+        "nl": "Een van de eerste pc-platformspellen (1988): Captain Comic redt de schatten van planeet Tambi.",
+        "en": "One of the first PC platformers (1988): Captain Comic saves the treasures of planet Tambi."
+      },
+      "controls": {
+        "nl": "Pijltjes lopen, spatie springen, Ins schieten (zie K voor toetsen).",
+        "en": "Arrows walk, Space jump, Ins shoot (press K for keys)."
+      },
+      "license": {
+        "nl": "Shareware die volgens de maker vrij herverdeeld mag worden, onveranderd. Het archief wordt in je browser uitgepakt.",
+        "en": "Shareware that per the author may be freely redistributed, unmodified. The archive is unpacked in your browser."
+      }
+    },
+    {
+      "id": "dave",
+      "title": "Dangerous Dave",
+      "year": 1990,
+      "maker": "John Romero / Softdisk",
+      "zip": "games/dave/gameedge.zip",
+      "start": "DAVE",
+      "cat": "platform",
+      "dir": "DDAVE",
+      "genre": {
+        "nl": "Platformspel",
+        "en": "Platformer"
+      },
+      "desc": {
+        "nl": "John Romero's Dangerous Dave (1990): verzamel de trofee in elk level.",
+        "en": "John Romero's Dangerous Dave (1990): grab the trophy in each level."
+      },
+      "controls": {
+        "nl": "Pijltjes lopen en springen, F1 hulp.",
+        "en": "Arrows walk and jump, F1 help."
+      },
+      "license": {
+        "nl": "Gratis promotiespel van Softdisk's Gamer's Edge, nooit verkocht. Origineel archief, onveranderd.",
+        "en": "Free promotional game from Softdisk's Gamer's Edge, never sold. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "clyde",
+      "title": "Clyde's Adventure",
+      "year": 1992,
+      "maker": "Moonlite Software",
+      "zip": "games/clyde/clyde_full.zip",
+      "start": "CLYDE1",
+      "cat": "platform",
+      "genre": {
+        "nl": "Puzzel-platform",
+        "en": "Puzzle platformer"
+      },
+      "desc": {
+        "nl": "Clyde zoekt de verloren schat van Tahookaboo, van de maker van Hocus Pocus.",
+        "en": "Clyde searches for the lost treasure of Tahookaboo, by the maker of Hocus Pocus."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen, spatie springen (zie hulp).",
+        "en": "Arrows move, Space jump (see help)."
+      },
+      "license": {
+        "nl": "Freeware, vrijgegeven door Moonlite Software. Origineel archief, onveranderd.",
+        "en": "Freeware, released by Moonlite Software. Original archive, unmodified."
+      }
+    },
+    {
       "id": "jetpack",
       "title": "Jetpack",
       "year": 1993,
@@ -386,6 +1161,31 @@
       "license": {
         "nl": "Freeware sinds 1998 (Adam Pedersen). Origineel archief, onveranderd.",
         "en": "Freeware since 1998 (Adam Pedersen). Original archive, unmodified."
+      }
+    },
+    {
+      "id": "jetpackxmas",
+      "title": "Jetpack Christmas Special",
+      "year": 1993,
+      "maker": "Adam Pedersen",
+      "zip": "games/jetpackxmas/jetpk_ch.zip",
+      "start": "JETPACK",
+      "cat": "platform",
+      "genre": {
+        "nl": "Puzzel-platform",
+        "en": "Puzzle platformer"
+      },
+      "desc": {
+        "nl": "Gratis kerstspecial van Jetpack met nieuwe levels.",
+        "en": "Free Christmas special of Jetpack with new levels."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen, Alt jetpack, Ctrl phase shifter.",
+        "en": "Arrows move, Alt jetpack, Ctrl phase shifter."
+      },
+      "license": {
+        "nl": "Freeware, vrijgegeven door Adam Pedersen (1993). Origineel archief, onveranderd.",
+        "en": "Freeware, released by Adam Pedersen (1993). Original archive, unmodified."
       }
     },
     {
@@ -437,6 +1237,232 @@
       "license": {
         "nl": "Creative Commons BY-SA 2.5 (xLand, 2006). Originele release, onveranderd.",
         "en": "Creative Commons BY-SA 2.5 (xLand, 2006). Original release, unmodified."
+      }
+    },
+    {
+      "id": "skyroads",
+      "title": "SkyRoads",
+      "year": 1993,
+      "maker": "BlueMoon Software",
+      "zip": "games/skyroads/skyroads.zip",
+      "start": "SKYROADS",
+      "cat": "racing",
+      "genre": {
+        "nl": "Race",
+        "en": "Racing"
+      },
+      "desc": {
+        "nl": "Stuur je ruimteschip over zwevende wegen in de ruimte: springen, remmen en zuurstof sparen.",
+        "en": "Steer your spaceship along floating roads in space: jump, brake and save oxygen."
+      },
+      "controls": {
+        "nl": "Pijltjes sturen/gas, spatie springen.",
+        "en": "Arrows steer/throttle, Space jump."
+      },
+      "license": {
+        "nl": "Freeware (Bluemoon Interactive): vrij te verspreiden zolang het onveranderd en compleet is.",
+        "en": "Freeware (Bluemoon Interactive): free to distribute as long as it is unmodified and complete."
+      }
+    },
+    {
+      "id": "skyxmas",
+      "title": "SkyRoads Xmas Special",
+      "year": 1993,
+      "maker": "BlueMoon Software",
+      "zip": "games/skyxmas/skyxmas.zip",
+      "start": "SKYXMAS",
+      "cat": "racing",
+      "genre": {
+        "nl": "Race",
+        "en": "Racing"
+      },
+      "desc": {
+        "nl": "Winterse kerstversie van SkyRoads met nieuwe levels.",
+        "en": "Wintry Christmas edition of SkyRoads with new levels."
+      },
+      "controls": {
+        "nl": "Pijltjes sturen/gas, spatie springen.",
+        "en": "Arrows steer/throttle, Space jump."
+      },
+      "license": {
+        "nl": "Freeware (Bluemoon Interactive): vrij te verspreiden zolang het onveranderd en compleet is.",
+        "en": "Freeware (Bluemoon Interactive): free to distribute as long as it is unmodified and complete."
+      }
+    },
+    {
+      "id": "kosmonaut",
+      "title": "Kosmonaut",
+      "year": 1989,
+      "maker": "TIW Systems (BlueMoon)",
+      "zip": "games/kosmonaut/kosmo.zip",
+      "start": "KOSMO",
+      "cat": "racing",
+      "genre": {
+        "nl": "Race",
+        "en": "Racing"
+      },
+      "desc": {
+        "nl": "De voorloper van SkyRoads uit 1990: race in 3D door de ruimte.",
+        "en": "The 1990 predecessor of SkyRoads: race through space in 3D."
+      },
+      "controls": {
+        "nl": "Pijltjes sturen, spatie springen.",
+        "en": "Arrows steer, Space jump."
+      },
+      "license": {
+        "nl": "Freeware, vrijgegeven door BlueMoon Software. Origineel archief, onveranderd.",
+        "en": "Freeware, released by BlueMoon Software. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "turbo",
+      "title": "Turbo",
+      "year": 1987,
+      "maker": "Doug Ross",
+      "zip": "games/turbo/turbo.zip",
+      "start": "TURBO",
+      "cat": "racing",
+      "genre": {
+        "nl": "Race",
+        "en": "Racing"
+      },
+      "desc": {
+        "nl": "Een van de oudste pc-racespellen (1987): ontwijk het verkeer op de weg.",
+        "en": "One of the oldest PC racing games (1987): dodge the traffic on the road."
+      },
+      "controls": {
+        "nl": "Pijltjes sturen en gas geven.",
+        "en": "Arrows steer and accelerate."
+      },
+      "license": {
+        "nl": "Freeware van maker Doug Ross (1987). Origineel archief, onveranderd.",
+        "en": "Freeware by its author Doug Ross (1987). Original archive, unmodified."
+      }
+    },
+    {
+      "id": "arcadevolley",
+      "title": "Arcade Volleyball",
+      "year": 1988,
+      "maker": "Rhett Anderson (COMPUTE!)",
+      "zip": "games/arcadevolley/av.zip",
+      "start": "AV",
+      "cat": "arcade",
+      "genre": {
+        "nl": "Arcade / sport (2 spelers)",
+        "en": "Arcade / sports (2 players)"
+      },
+      "desc": {
+        "nl": "Volleybal met twee rare wezentjes, alleen of met z'n tweeën. Een klassieker uit COMPUTE! (1988).",
+        "en": "Volleyball with two odd creatures, alone or with two. A classic from COMPUTE! (1988)."
+      },
+      "controls": {
+        "nl": "Toetsen instellen in het menu.",
+        "en": "Set the keys in the menu."
+      },
+      "license": {
+        "nl": "Publiek domein (Rhett Anderson). Origineel archief, onveranderd.",
+        "en": "Public domain (Rhett Anderson). Original archive, unmodified."
+      }
+    },
+    {
+      "id": "chopper",
+      "title": "Chopper Commando",
+      "year": 1990,
+      "maker": "Mark Currie",
+      "zip": "games/chopper/chopper257.zip",
+      "start": "CHOPPER2",
+      "cat": "arcade",
+      "genre": {
+        "nl": "Arcade",
+        "en": "Arcade"
+      },
+      "desc": {
+        "nl": "Vlieg een helikopter achter de vijandelijke linies en red je mannen.",
+        "en": "Fly a helicopter behind enemy lines and rescue your men."
+      },
+      "controls": {
+        "nl": "Pijltjes vliegen, spatie vuren (zie Instructions).",
+        "en": "Arrows fly, Space fire (see Instructions)."
+      },
+      "license": {
+        "nl": "Freeware, vrijgegeven door Mark Currie (met broncode). Origineel archief, onveranderd.",
+        "en": "Freeware, released by Mark Currie (met broncode). Original archive, unmodified."
+      }
+    },
+    {
+      "id": "duel2000",
+      "title": "Duel 2000",
+      "year": 1991,
+      "maker": "Damon Hastings",
+      "zip": "games/duel2000/duel.zip",
+      "start": "DUEL",
+      "cat": "arcade",
+      "genre": {
+        "nl": "Arcade (2 spelers)",
+        "en": "Arcade (2 players)"
+      },
+      "desc": {
+        "nl": "Twee ruimteschepen, één toetsenbord: schiet je vriend uit de ruimte.",
+        "en": "Two spaceships, one keyboard: blast your friend out of space."
+      },
+      "controls": {
+        "nl": "Toetsen staan op het startscherm.",
+        "en": "Keys are shown on the start screen."
+      },
+      "license": {
+        "nl": "Freeware, vrijgegeven door Damon Hastings (2006). Origineel archief, onveranderd.",
+        "en": "Freeware, released by Damon Hastings (2006). Original archive, unmodified."
+      }
+    },
+    {
+      "id": "basketball",
+      "title": "Three Point Basketball Deluxe",
+      "year": 1993,
+      "maker": "Dan Hilton",
+      "zip": "games/basketball/3point.zip",
+      "start": "BBALL",
+      "cat": "arcade",
+      "genre": {
+        "nl": "Sport",
+        "en": "Sports"
+      },
+      "desc": {
+        "nl": "Driepuntschieten in de basketbalzaal, met digitale stemmen.",
+        "en": "Three-point shooting in the basketball gym, with digitised voices."
+      },
+      "controls": {
+        "nl": "Volg de aanwijzingen op het scherm.",
+        "en": "Follow the on-screen instructions."
+      },
+      "license": {
+        "nl": "Freeware, vrijgegeven door Dan Hilton. Origineel archief, onveranderd.",
+        "en": "Freeware, released by Dan Hilton. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "scorched",
+      "title": "Scorched Earth",
+      "year": 1991,
+      "maker": "Wendell Hicken",
+      "zip": "games/scorched/scorch15.zip",
+      "start": "SCORCH",
+      "cat": "arcade",
+      "extractAll": true,
+      "genre": {
+        "nl": "Strategie / arcade",
+        "en": "Strategy / arcade"
+      },
+      "desc": {
+        "nl": "'The Mother of All Games': tanks beschieten elkaar over bergen, tot 10 spelers.",
+        "en": "'The Mother of All Games': tanks shell each other over mountains, up to 10 players."
+      },
+      "controls": {
+        "nl": "Pijltjes richten en kracht, spatie vuren.",
+        "en": "Arrows aim and set power, Space fire."
+      },
+      "license": {
+        "nl": "Shareware van Wendell Hicken, vrij te verspreiden. Het archief wordt in je browser uitgepakt.",
+        "en": "Shareware by Wendell Hicken, freely distributable. The archive is unpacked in your browser."
       }
     },
     {
@@ -502,6 +1528,31 @@
       }
     },
     {
+      "id": "sango",
+      "title": "Sango Fighter",
+      "year": 1993,
+      "maker": "Panda Entertainment / Super Fighter Team",
+      "zip": "games/sango/sango_fighter-english.zip",
+      "start": "SANGO",
+      "cat": "action",
+      "genre": {
+        "nl": "Vechtspel",
+        "en": "Fighting"
+      },
+      "desc": {
+        "nl": "Street Fighter-achtig vechtspel met generaals uit het oude China. Engelse versie.",
+        "en": "Street Fighter-style fighting game with generals from ancient China. English version."
+      },
+      "controls": {
+        "nl": "Toetsen instellen via het menu (SETUP).",
+        "en": "Set the keys via the menu (SETUP)."
+      },
+      "license": {
+        "nl": "Freeware (Super Fighter Team, 2009): vrij te verspreiden zolang niets gewijzigd wordt.",
+        "en": "Freeware (Super Fighter Team, 2009): free to distribute as long as nothing is modified."
+      }
+    },
+    {
       "id": "liero",
       "title": "Liero",
       "year": 1998,
@@ -525,6 +1576,209 @@
         "en": "Player 1: D/G move, R/F aim, left Ctrl fire, left Shift weapon, left Alt jump. Player 2: arrows, right Ctrl fire, right Alt weapon, right Shift jump."
       },
       "cat": "action"
+    },
+    {
+      "id": "heartlight",
+      "title": "Heartlight PC",
+      "year": 1994,
+      "maker": "xLand",
+      "zip": "games/heartlight/hl.zip",
+      "start": "HL",
+      "cat": "puzzle",
+      "genre": {
+        "nl": "Puzzel",
+        "en": "Puzzle"
+      },
+      "desc": {
+        "nl": "Verzamel alle hartjes in deze Boulder Dash-achtige puzzelaar.",
+        "en": "Collect all hearts in this Boulder Dash-style puzzler."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen, Esc menu.",
+        "en": "Arrows move, Esc menu."
+      },
+      "license": {
+        "nl": "Creative Commons BY-SA 2.5 (xLand, 2006). Originele release, onveranderd.",
+        "en": "Creative Commons BY-SA 2.5 (xLand, 2006). Original release, unmodified."
+      }
+    },
+    {
+      "id": "robbo",
+      "title": "Adventures of Robbo",
+      "year": 1993,
+      "maker": "xLand",
+      "zip": "games/robbo/robbo.zip",
+      "start": "ROBBO",
+      "cat": "puzzle",
+      "genre": {
+        "nl": "Puzzel",
+        "en": "Puzzle"
+      },
+      "desc": {
+        "nl": "De robot Robbo moet ontsnappen van vreemde planeten. Pc-versie van de Poolse Atari-klassieker.",
+        "en": "The robot Robbo must escape from strange planets. PC version of the Polish Atari classic."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen, Shift + pijl schieten.",
+        "en": "Arrows move, Shift + arrow shoot."
+      },
+      "license": {
+        "nl": "Creative Commons BY-SA 2.5 (xLand, 2006). Originele release, onveranderd.",
+        "en": "Creative Commons BY-SA 2.5 (xLand, 2006). Original release, unmodified."
+      }
+    },
+    {
+      "id": "boppin",
+      "title": "Boppin'",
+      "year": 1994,
+      "maker": "Accursed Toys",
+      "zip": "games/boppin/boppinr.zip",
+      "cat": "puzzle",
+      "autoexec": [
+        "INSTALL",
+        "SETUP",
+        "BOPPIN"
+      ],
+      "keys": [
+        {
+          "wait": 5000,
+          "key": 257
+        },
+        {
+          "wait": 2500,
+          "key": 257
+        },
+        {
+          "wait": 6000,
+          "key": 257
+        },
+        {
+          "wait": 4000,
+          "key": 257
+        }
+      ],
+      "genre": {
+        "nl": "Puzzel",
+        "en": "Puzzle"
+      },
+      "desc": {
+        "nl": "Kleurrijke puzzelaar: schiet blokken tegen gelijke blokken. Bij het starten draait eerst het originele installatieprogramma; druk zo nodig op Enter.",
+        "en": "Colourful puzzler: bounce blocks into matching blocks. On start the original installer runs first; press Enter if it waits."
+      },
+      "controls": {
+        "nl": "Na de installatie start SETUP: kies SoundBlaster voor geluid en muziek. Pijltjes en spatie in het spel.",
+        "en": "After installation SETUP starts: choose SoundBlaster for sound and music. Arrows and Space in the game."
+      },
+      "license": {
+        "nl": "Freeware, vrijgegeven door Accursed Toys. Origineel archief, onveranderd.",
+        "en": "Freeware, released by Accursed Toys. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "tcb",
+      "title": "Taking Care of Business",
+      "year": 1994,
+      "maker": "Moonlite Software",
+      "zip": "games/tcb/tcb_full.zip",
+      "start": "TCB",
+      "cat": "puzzle",
+      "genre": {
+        "nl": "Puzzel",
+        "en": "Puzzle"
+      },
+      "desc": {
+        "nl": "Kantoorpuzzels: sorteer de bureauboel binnen de tijd.",
+        "en": "Office puzzles: sort out the desk mess within the time limit."
+      },
+      "controls": {
+        "nl": "Muis en toetsenbord (zie hulp).",
+        "en": "Mouse and keyboard (see help)."
+      },
+      "license": {
+        "nl": "Freeware, vrijgegeven door Moonlite Software. Origineel archief, onveranderd.",
+        "en": "Freeware, released by Moonlite Software. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "kentris",
+      "title": "Kentris",
+      "year": 1991,
+      "maker": "Ken Silverman",
+      "zip": "games/kentris/kentrs43.zip",
+      "start": "KENTRIS",
+      "cat": "puzzle",
+      "genre": {
+        "nl": "Puzzel (3D-blokken)",
+        "en": "Puzzle (3D blocks)"
+      },
+      "desc": {
+        "nl": "Ken Silvermans eigen draai aan vallende blokken, met draaiende 3D-blokken.",
+        "en": "Ken Silverman's own take on falling blocks, with rotating 3D blocks."
+      },
+      "controls": {
+        "nl": "Enter spelen, spatie opties, F1 hulp.",
+        "en": "Enter play, Space options, F1 help."
+      },
+      "license": {
+        "nl": "Freeware, vrijgegeven door Ken Silverman. Origineel archief, onveranderd.",
+        "en": "Freeware, released by Ken Silverman. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "psionchess",
+      "title": "Psion Chess",
+      "year": 1985,
+      "maker": "Richard Lang / Psion",
+      "zip": "games/psionchess/psion213.zip",
+      "start": "CHESS",
+      "cat": "puzzle",
+      "keys": [
+        {
+          "wait": 4000,
+          "key": 67
+        }
+      ],
+      "genre": {
+        "nl": "Schaken",
+        "en": "Chess"
+      },
+      "desc": {
+        "nl": "Sterk schaakprogramma van wereldkampioen computerschaak Richard Lang (1985).",
+        "en": "Strong chess program by computer-chess world champion Richard Lang (1985)."
+      },
+      "controls": {
+        "nl": "Zetten intikken, F1 hulp.",
+        "en": "Type your moves, F1 help."
+      },
+      "license": {
+        "nl": "Freeware, vrijgegeven door Richard Lang en Psion. Origineel archief, onveranderd.",
+        "en": "Freeware, released by Richard Lang and Psion. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "mahjongg",
+      "title": "Mah Jongg -V-G-A-",
+      "year": 1989,
+      "maker": "Ron Balewski",
+      "zip": "games/mahjongg/mah-jongg.zip",
+      "start": "MJVGA31",
+      "cat": "puzzle",
+      "genre": {
+        "nl": "Bordspel (Mahjong)",
+        "en": "Board game (Mahjong)"
+      },
+      "desc": {
+        "nl": "Klassieke Mahjong-solitaire in VGA.",
+        "en": "Classic Mahjong solitaire in VGA."
+      },
+      "controls": {
+        "nl": "Muis: klik op twee gelijke vrije stenen.",
+        "en": "Mouse: click two matching free tiles."
+      },
+      "license": {
+        "nl": "Freeware, vrijgegeven door Ron Balewski. Origineel archief, onveranderd.",
+        "en": "Freeware, released by Ron Balewski. Original archive, unmodified."
+      }
     }
   ],
   "planned": [],

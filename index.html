@@ -222,7 +222,7 @@ const T = {
   "player.full":"Volledig scherm","player.close":"Sluiten",
   "player.help":"Klik eerst in het beeld zodat het spel je toetsen ontvangt. Esc verlaat volledig scherm.",
   "card.play":"Spelen","card.soon":"Binnenkort","card.license":"Licentie","card.visit":"Naar de website",
-  "cat.all":"Alles","cat.adventure":"Point & click","cat.shooter":"Shooters","cat.platform":"Platform","cat.action":"Actie & vechten",
+  "cat.all":"Alles","cat.adventure":"Point & click","cat.shooter":"Shooters","cat.platform":"Platform","cat.action":"Vechten & actie","cat.racing":"Racen","cat.arcade":"Arcade & sport","cat.puzzle":"Puzzel & bordspel",
   "links.title":"Gratis downloads & online","links.intro":"Moderne gratis spellen die je op je eigen computer installeert of online speelt. Ze draaien niet in deze speelhal; de knop brengt je naar de officiële website."
  },
  en:{
@@ -246,7 +246,7 @@ const T = {
   "player.full":"Full screen","player.close":"Close",
   "player.help":"Click inside the picture first so the game receives your keys. Esc leaves full screen.",
   "card.play":"Play","card.soon":"Coming soon","card.license":"Licence","card.visit":"Visit website",
-  "cat.all":"All","cat.adventure":"Point & click","cat.shooter":"Shooters","cat.platform":"Platform","cat.action":"Action & fighting",
+  "cat.all":"All","cat.adventure":"Point & click","cat.shooter":"Shooters","cat.platform":"Platform","cat.action":"Fighting & action","cat.racing":"Racing","cat.arcade":"Arcade & sports","cat.puzzle":"Puzzle & board",
   "links.title":"Free downloads & online","links.intro":"Modern free games you install on your own computer or play online. They don\u2019t run in this arcade; the button takes you to the official website."
  }
 };
@@ -287,14 +287,14 @@ function card(g, playable){
       try {
         const r = await fetch(g.zip); if (!r.ok) throw new Error(r.status);
         const bytes = new Uint8Array(await r.arrayBuffer());
-        play({ title: g.title, bytes, startDir: g.dir || "", startCmd: g.start, autoexec: g.autoexec, keys: g.keys, unpack: g.unpack });
+        play({ title: g.title, bytes, startDir: g.dir || "", startCmd: g.start, autoexec: g.autoexec, keys: g.keys, unpack: g.unpack, extractAll: g.extractAll });
       } finally { b.disabled = false; }
     });
     c.append(b);
   }
   return c;
 }
-const CATS = ["all","adventure","shooter","platform","action"];
+const CATS = ["all","adventure","shooter","platform","racing","arcade","action","puzzle"];
 let currentCat = "all";
 function renderFilters(){
   const f = document.getElementById("filters"); f.replaceChildren();
@@ -332,7 +332,7 @@ function dosboxConf(startDir, startCmd, autoexec){
   return lines.join("\n") + "\n";
 }
 let frame = null;
-function play({ title, url, bytes, startDir, startCmd, isBundle, autoexec, keys, unpack, scummvm }){
+function play({ title, url, bytes, startDir, startCmd, isBundle, autoexec, keys, unpack, extractAll, scummvm }){
   stopDos();
   document.getElementById("player-title").textContent = title;
   if (scummvm) {
@@ -344,7 +344,7 @@ function play({ title, url, bytes, startDir, startCmd, isBundle, autoexec, keys,
     if (!dlg.open) dlg.showModal();
     return;
   }
-  const msg = { type: "run", keys, unpack };
+  const msg = { type: "run", keys, unpack, extractAll };
   const transfer = [];
   if (url) msg.url = new URL(url, location.href).href;
   else {
