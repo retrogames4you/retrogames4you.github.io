@@ -1,0 +1,19 @@
+ScummVM web build (Emscripten port) — https://www.scummvm.org
+Copyright (C) The ScummVM Team. Licensed under the GNU General Public License,
+version 2 or (at your option) any later version — see LICENSE-ScummVM.txt.
+
+Binaries (scummvm.js, scummvm.wasm, ../data/plugins/*.so and engine data files in /data/)
+are unmodified copies from the ScummVM web demo build by Christian Kuendig:
+  https://github.com/chkuendig/scummvm-demo  (branch gh-pages, commit 0fd26b62fc2c93c559872d7515004b987bd835e0)
+Corresponding source code:
+  https://github.com/scummvm/scummvm  (backends/platform/sdl/emscripten, dists/emscripten)
+  https://github.com/chkuendig/scummvm-demo  (build scripts)
+
+Game data in /data/games/ is freeware, distributed under each game's own licence,
+included unchanged in its folder (readme.txt / LICENSE.txt / license.txt):
+  sky      Beneath a Steel Sky (CD)            (C) Revolution Software Ltd
+  queen    Flight of the Amazon Queen (floppy) (C) John Passfield & Steven Stamatiadis
+  lure     Lure of the Temptress               (C) Revolution Software Ltd
+  drascula Drascula: The Vampire Strikes Back  (C) Alcachofa Soft S.L.
+  soltys   Soltys                              (C) Laboratorium Komputerowe Avalon
+Downloaded from https://www.scummvm.org/games/ (official freeware downloads).

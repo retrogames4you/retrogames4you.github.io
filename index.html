@@ -45,6 +45,9 @@ section.ra-block h2{font-family:"Press Start 2P",monospace;font-size:clamp(1rem,
 section.ra-block .ra-intro{color:var(--soft);max-width:66ch;margin:0 0 28px}
 
 /* game grid */
+.ra-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.ra-filters button{font:inherit;font-size:.9rem;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--soft);cursor:pointer}
+.ra-filters button[aria-pressed="true"]{background:var(--cyan);border-color:var(--cyan);color:var(--bg)}
 .ra-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
 .ra-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px}
 .ra-card h3{margin:0;font-size:1.15rem}
@@ -113,6 +116,7 @@ footer p{margin:6px 0;max-width:80ch}
     <div class="ra-wrap">
       <h2 data-i18n="games.title">Speelhal</h2>
       <p class="ra-intro" data-i18n="games.intro">Klik op Spelen. Het spel start in een venster; gebruik het toetsenbord en klik in het beeld als de muis nodig is.</p>
+      <div class="ra-filters" id="filters" role="group" aria-label="Genre"></div>
       <div class="ra-grid" id="grid"></div>
       <p class="ra-empty" id="grid-empty" hidden data-i18n="games.empty">De eerste spellen worden binnenkort toegevoegd.</p>
     </div>
@@ -123,6 +127,14 @@ footer p{margin:6px 0;max-width:80ch}
       <h2 data-i18n="soon.title">Binnenkort</h2>
       <p class="ra-intro" data-i18n="soon.intro">Deze titels zijn gecontroleerd en mogen vrij verspreid worden. Ze worden toegevoegd zodra de originele bestanden klaarstaan.</p>
       <div class="ra-grid" id="soon-grid"></div>
+    </div>
+  </section>
+
+  <section class="ra-block" id="links">
+    <div class="ra-wrap">
+      <h2 data-i18n="links.title">Gratis downloads &amp; online</h2>
+      <p class="ra-intro" data-i18n="links.intro">Moderne gratis spellen die je op je eigen computer installeert of online speelt. Ze draaien niet in deze speelhal; de knop brengt je naar de officiële website.</p>
+      <div class="ra-grid" id="links-grid"></div>
     </div>
   </section>
 
@@ -157,7 +169,7 @@ footer p{margin:6px 0;max-width:80ch}
 <footer>
   <div class="ra-wrap">
     <p data-i18n="foot.legal">Alle spellen in de speelhal zijn door hun makers vrijgegeven als freeware, open source of shareware die vrij verspreid mag worden. De licentie staat bij elk spel. Merken en namen zijn eigendom van hun respectieve eigenaars.</p>
-    <p><span data-i18n="foot.engine">Emulator:</span> <a href="https://github.com/caiiiycuk/js-dos">js-dos</a> (<a href="vendor/js-dos/NOTICE.txt">GPL-2.0</a>), <span data-i18n="foot.engine2">gebaseerd op DOSBox.</span></p>
+    <p><span data-i18n="foot.engine">Emulator:</span> <a href="https://github.com/caiiiycuk/js-dos">js-dos</a> (<a href="vendor/js-dos/NOTICE.txt">GPL-2.0</a>) · <a href="https://www.scummvm.org">ScummVM</a> (<a href="scummvm/NOTICE.txt">GPL-2.0+</a>) · fflate (<a href="vendor/fflate/LICENSE">MIT</a>), <span data-i18n="foot.engine2">gebaseerd op DOSBox.</span></p>
   </div>
 </footer>
 
@@ -194,7 +206,9 @@ const T = {
   "foot.engine":"Emulator:","foot.engine2":"gebaseerd op DOSBox.",
   "player.full":"Volledig scherm","player.close":"Sluiten",
   "player.help":"Klik eerst in het beeld zodat het spel je toetsen ontvangt. Esc verlaat volledig scherm.",
-  "card.play":"Spelen","card.soon":"Binnenkort","card.license":"Licentie"
+  "card.play":"Spelen","card.soon":"Binnenkort","card.license":"Licentie","card.visit":"Naar de website",
+  "cat.all":"Alles","cat.adventure":"Point & click","cat.shooter":"Shooters","cat.platform":"Platform","cat.action":"Actie & vechten",
+  "links.title":"Gratis downloads & online","links.intro":"Moderne gratis spellen die je op je eigen computer installeert of online speelt. Ze draaien niet in deze speelhal; de knop brengt je naar de officiële website."
  },
  en:{
   "hero.title":"Insert coin.",
@@ -215,7 +229,9 @@ const T = {
   "foot.engine":"Emulator:","foot.engine2":"based on DOSBox.",
   "player.full":"Full screen","player.close":"Close",
   "player.help":"Click inside the picture first so the game receives your keys. Esc leaves full screen.",
-  "card.play":"Play","card.soon":"Coming soon","card.license":"Licence"
+  "card.play":"Play","card.soon":"Coming soon","card.license":"Licence","card.visit":"Visit website",
+  "cat.all":"All","cat.adventure":"Point & click","cat.shooter":"Shooters","cat.platform":"Platform","cat.action":"Action & fighting",
+  "links.title":"Free downloads & online","links.intro":"Modern free games you install on your own computer or play online. They don\u2019t run in this arcade; the button takes you to the official website."
  }
 };
 let lang = "nl";
@@ -242,25 +258,45 @@ function card(g, playable){
   if (g.desc) c.append(el("p", { style: "margin:0;color:var(--soft);font-size:.95rem" }, loc(g.desc)));
   if (g.controls) c.append(el("p", { style: "margin:0;font-size:.88rem" }, loc(g.controls)));
   c.append(el("div", { class: "ra-lic" }, t("card.license") + ": " + loc(g.license)));
-  if (playable){
+  if (g.link){
+    const a = el("a", { class: "ra-btn ra-ghost", href: g.link, target: "_blank", rel: "noopener" }, t("card.visit"));
+    c.append(a);
+  } else if (playable){
     const b = el("button", { class: "ra-btn", type: "button" }, t("card.play"));
     b.addEventListener("click", async () => {
       if (g.bundle) return play({ title: g.title, url: g.bundle });
+      if (g.engine === "scummvm") return play({ title: g.title, scummvm: g.args });
       // Original archive, served unchanged; DOSBox is configured at runtime.
       b.disabled = true;
       try {
         const r = await fetch(g.zip); if (!r.ok) throw new Error(r.status);
         const bytes = new Uint8Array(await r.arrayBuffer());
-        play({ title: g.title, bytes, startDir: g.dir || "", startCmd: g.start, autoexec: g.autoexec, keys: g.keys });
+        play({ title: g.title, bytes, startDir: g.dir || "", startCmd: g.start, autoexec: g.autoexec, keys: g.keys, unpack: g.unpack });
       } finally { b.disabled = false; }
     });
     c.append(b);
   }
   return c;
 }
+const CATS = ["all","adventure","shooter","platform","action"];
+let currentCat = "all";
+function renderFilters(){
+  const f = document.getElementById("filters"); f.replaceChildren();
+  CATS.forEach(c => {
+    const n = c === "all" ? CATALOG.games.length : CATALOG.games.filter(g => g.cat === c).length;
+    if (!n) return;
+    const b = el("button", { type: "button", "aria-pressed": String(c === currentCat) }, t("cat." + c) + " (" + n + ")");
+    b.addEventListener("click", () => { currentCat = c; renderCatalog(); });
+    f.append(b);
+  });
+}
 function renderCatalog(){
+  renderFilters();
   const grid = document.getElementById("grid"); grid.replaceChildren();
-  CATALOG.games.forEach(g => grid.append(card(g, true)));
+  CATALOG.games.filter(g => currentCat === "all" || g.cat === currentCat).forEach(g => grid.append(card(g, true)));
+  const lg = document.getElementById("links-grid"); lg.replaceChildren();
+  (CATALOG.links || []).forEach(g => lg.append(card(g, true)));
+  document.getElementById("links").hidden = !(CATALOG.links || []).length;
   document.getElementById("grid-empty").hidden = CATALOG.games.length > 0;
   const soon = document.getElementById("soon-grid"); soon.replaceChildren();
   CATALOG.planned.forEach(g => soon.append(card(g, false)));
@@ -280,10 +316,19 @@ function dosboxConf(startDir, startCmd, autoexec){
   return lines.join("\n") + "\n";
 }
 let frame = null;
-function play({ title, url, bytes, startDir, startCmd, isBundle, autoexec, keys }){
+function play({ title, url, bytes, startDir, startCmd, isBundle, autoexec, keys, unpack, scummvm }){
   stopDos();
   document.getElementById("player-title").textContent = title;
-  const msg = { type: "run", keys };
+  if (scummvm) {
+    // Point-and-click adventures run in the ScummVM web build (separate page, launch arguments in the hash).
+    frame = el("iframe", { src: "scummvm/index.html#" + scummvm, title: title, allow: "fullscreen; autoplay; gamepad" });
+    frame.style.cssText = "position:absolute;inset:0;width:100%;height:100%;border:0;background:#000";
+    frame.addEventListener("load", () => frame && frame.focus());
+    document.getElementById("screen").append(frame);
+    if (!dlg.open) dlg.showModal();
+    return;
+  }
+  const msg = { type: "run", keys, unpack };
   const transfer = [];
   if (url) msg.url = new URL(url, location.href).href;
   else {

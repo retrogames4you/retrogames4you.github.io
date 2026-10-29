@@ -1,27 +1,128 @@
 {
   "games": [
     {
-      "id": "liero",
-      "title": "Liero",
-      "year": 1998,
+      "id": "bass",
+      "title": "Beneath a Steel Sky",
+      "year": 1994,
+      "maker": "Revolution Software",
+      "engine": "scummvm",
+      "args": "--path=/data/games/sky --auto-detect",
+      "cat": "adventure",
       "genre": {
-        "nl": "Actie / duel voor 2 spelers",
-        "en": "Action / 2-player duel"
+        "nl": "Point & click (met stemmen)",
+        "en": "Point & click (voiced)"
       },
-      "maker": "Joosa Riekkinen",
-      "license": {
-        "nl": "Freeware (Joosa Riekkinen, 1998–1999): vrij te verspreiden zonder wijzigingen. Origineel archief, onveranderd.",
-        "en": "Freeware (Joosa Riekkinen, 1998–1999): free to distribute without changes. Original archive, unmodified."
-      },
-      "zip": "games/liero/liero133.zip",
-      "start": "LIERO.EXE",
       "desc": {
-        "nl": "Twee wormen, veertig wapens en een ninjatouw. Speel samen op één toetsenbord of tegen de computer.",
-        "en": "Two worms, forty weapons and a ninja rope. Play together on one keyboard or against the computer."
+        "nl": "Sciencefiction-avontuur in een grimmige toekomststad. Robert Foster en zijn robotje Joey ontdekken de waarheid achter de stad. Volledig ingesproken cd-versie.",
+        "en": "Science-fiction adventure in a bleak future city. Robert Foster and his robot Joey uncover the truth behind the city. Fully voiced CD version."
       },
       "controls": {
-        "nl": "Speler 1: D/G bewegen, R/F richten, links Ctrl vuren, links Shift wapen, links Alt springen. Speler 2: pijltjes, rechts Ctrl vuren, rechts Alt wapen, rechts Shift springen.",
-        "en": "Player 1: D/G move, R/F aim, left Ctrl fire, left Shift weapon, left Alt jump. Player 2: arrows, right Ctrl fire, right Alt weapon, right Shift jump."
+        "nl": "Muis: linksklik bekijken, rechtsklik gebruiken. F5 menu (opslaan/laden).",
+        "en": "Mouse: left-click look, right-click use. F5 menu (save/load)."
+      },
+      "license": {
+        "nl": "Freeware (Revolution Software, 2003): vrij te verspreiden, readme en copyright intact. Draait in ScummVM.",
+        "en": "Freeware (Revolution Software, 2003): free to distribute, readme and copyright intact. Runs in ScummVM."
+      }
+    },
+    {
+      "id": "fotaq",
+      "title": "Flight of the Amazon Queen",
+      "year": 1995,
+      "maker": "John Passfield & Steve Stamatiadis",
+      "engine": "scummvm",
+      "args": "--path=/data/games/queen --auto-detect",
+      "cat": "adventure",
+      "genre": {
+        "nl": "Point & click",
+        "en": "Point & click"
+      },
+      "desc": {
+        "nl": "Piloot Joe King stort neer in het Amazone-oerwoud en ontdekt een gestoord complot. Vol humor in de stijl van Monkey Island.",
+        "en": "Pilot Joe King crash-lands in the Amazon jungle and uncovers a crazy plot. Full of Monkey Island-style humour."
+      },
+      "controls": {
+        "nl": "Muis. Opslaan en laden via het Journal-voorwerp in je inventaris.",
+        "en": "Mouse. Save and load via the Journal item in your inventory."
+      },
+      "license": {
+        "nl": "Freeware (makers, 2004): vrij te verspreiden, readme en copyright intact. Draait in ScummVM.",
+        "en": "Freeware (authors, 2004): free to distribute, readme and copyright intact. Runs in ScummVM."
+      }
+    },
+    {
+      "id": "lure",
+      "title": "Lure of the Temptress",
+      "year": 1992,
+      "maker": "Revolution Software",
+      "engine": "scummvm",
+      "args": "--path=/data/games/lure --auto-detect",
+      "cat": "adventure",
+      "genre": {
+        "nl": "Point & click",
+        "en": "Point & click"
+      },
+      "desc": {
+        "nl": "Het eerste avontuur van Revolution (de makers van Broken Sword). Diermot moet een dorp bevrijden van de tovenares Selena.",
+        "en": "Revolution's first adventure (the makers of Broken Sword). Diermot must free a village from the sorceress Selena."
+      },
+      "controls": {
+        "nl": "Muis: linksklik lopen/gebruiken, rechtsklik menu. F5 opslaan/laden.",
+        "en": "Mouse: left-click walk/use, right-click menu. F5 save/load."
+      },
+      "license": {
+        "nl": "Freeware (Revolution Software): vrij te verspreiden, licentie en copyright intact. Draait in ScummVM.",
+        "en": "Freeware (Revolution Software): free to distribute, licence and copyright intact. Runs in ScummVM."
+      }
+    },
+    {
+      "id": "drascula",
+      "title": "Drascula: The Vampire Strikes Back",
+      "year": 1996,
+      "maker": "Alcachofa Soft",
+      "engine": "scummvm",
+      "args": "--path=/data/games/drascula --auto-detect",
+      "cat": "adventure",
+      "genre": {
+        "nl": "Point & click (komisch)",
+        "en": "Point & click (comedy)"
+      },
+      "desc": {
+        "nl": "Spaans komisch vampiersavontuur: John Hacker moet zijn vriendin redden uit het kasteel van graaf Drascula. Met de officiële muziek.",
+        "en": "Spanish comedy vampire adventure: John Hacker must rescue his girlfriend from Count Drascula's castle. With the official music."
+      },
+      "controls": {
+        "nl": "Muis: rechtsklik kiest de actie, linksklik voert uit. F5 menu.",
+        "en": "Mouse: right-click picks the action, left-click performs it. F5 menu."
+      },
+      "license": {
+        "nl": "Freeware (Alcachofa Soft, 2008): vrij te verspreiden, readme en copyright intact. Draait in ScummVM.",
+        "en": "Freeware (Alcachofa Soft, 2008): free to distribute, readme and copyright intact. Runs in ScummVM."
+      }
+    },
+    {
+      "id": "soltys",
+      "title": "Sołtys",
+      "year": 1995,
+      "maker": "LK Avalon",
+      "engine": "scummvm",
+      "args": "--path=/data/games/soltys --auto-detect",
+      "cat": "adventure",
+      "genre": {
+        "nl": "Point & click (komisch)",
+        "en": "Point & click (comedy)"
+      },
+      "desc": {
+        "nl": "Pools komisch avontuur over de dorpsburgemeester (sołtys) en zijn wonderlijke dorp. Engelse versie.",
+        "en": "Polish comedy adventure about the village mayor (sołtys) and his peculiar village. English version."
+      },
+      "controls": {
+        "nl": "Muis. F5 menu.",
+        "en": "Mouse. F5 menu."
+      },
+      "license": {
+        "nl": "Freeware (LK Avalon, 2011): vrij te verspreiden, licentie en copyright intact. Draait in ScummVM.",
+        "en": "Freeware (LK Avalon, 2011): free to distribute, licence and copyright intact. Runs in ScummVM."
       }
     },
     {
@@ -61,7 +162,8 @@
       "controls": {
         "nl": "Pijltjes bewegen, Ctrl vuren, spatie deuren openen, Shift rennen, Alt zijwaarts, 1–7 wapens, Esc menu.",
         "en": "Arrows move, Ctrl fire, Space open doors, Shift run, Alt strafe, 1–7 weapons, Esc menu."
-      }
+      },
+      "cat": "shooter"
     },
     {
       "id": "wolf3d",
@@ -94,6 +196,114 @@
       "controls": {
         "nl": "Pijltjes bewegen, Ctrl vuren, spatie deuren openen, Shift rennen, Alt zijwaarts, 1–4 wapens, Esc menu.",
         "en": "Arrows move, Ctrl fire, Space open doors, Shift run, Alt strafe, 1–4 weapons, Esc menu."
+      },
+      "cat": "shooter"
+    },
+    {
+      "id": "kenslab",
+      "title": "Ken's Labyrinth",
+      "year": 1993,
+      "maker": "Ken Silverman / Epic MegaGames",
+      "zip": "games/kenslab/labfull.zip",
+      "start": "KEN",
+      "cat": "shooter",
+      "genre": {
+        "nl": "3D-shooter",
+        "en": "3D shooter"
+      },
+      "desc": {
+        "nl": "Het eerste spel van Ken Silverman, die later de Build-engine van Duke Nukem 3D maakte. Ontsnap uit een doolhof vol vreemde wezens.",
+        "en": "The first game by Ken Silverman, who later wrote the Build engine of Duke Nukem 3D. Escape a maze full of strange creatures."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen en draaien, links Ctrl schieten, spatie deuren/gebruiken, links Shift rennen, F1–F3 wapens, Esc menu.",
+        "en": "Arrows move and turn, left Ctrl shoot, Space doors/use, left Shift run, F1–F3 weapons, Esc menu."
+      },
+      "license": {
+        "nl": "Volledige versie vrijgegeven door Ken Silverman met toestemming van Epic (1999): vrij te kopiëren, niet te verkopen. Origineel archief, onveranderd.",
+        "en": "Full version released by Ken Silverman with Epic's permission (1999): free to copy, not for sale. Original archive, unmodified."
+      }
+    },
+    {
+      "id": "td2192",
+      "title": "Traffic Department 2192",
+      "year": 1994,
+      "maker": "P-Squared Productions",
+      "zip": "games/td2192/td2192f.zip",
+      "start": "TD1",
+      "cat": "shooter",
+      "genre": {
+        "nl": "Space shooter",
+        "en": "Space shooter"
+      },
+      "desc": {
+        "nl": "Verhalende top-down space shooter met tientallen missies. Het verhaal is niet bedoeld voor jonge kinderen.",
+        "en": "Story-driven top-down space shooter with dozens of missions. The story is not intended for young children."
+      },
+      "controls": {
+        "nl": "De eerste keer vraagt het spel welke besturing en geluidskaart je hebt (kies toetsenbord en Sound Blaster).",
+        "en": "The first time, the game asks for your controller and sound card (choose keyboard and Sound Blaster)."
+      },
+      "license": {
+        "nl": "Creative Commons BY-ND 3.0 (P-Squared, 2007). Originele release, onveranderd.",
+        "en": "Creative Commons BY-ND 3.0 (P-Squared, 2007). Original release, unmodified."
+      }
+    },
+    {
+      "id": "overkill",
+      "title": "Overkill",
+      "year": 1992,
+      "maker": "Ste Cork (Technoir)",
+      "zip": "games/overkill/OverKill_Full.zip",
+      "dir": "OVERKI~1",
+      "start": "OVERKILL",
+      "keys": [
+        {
+          "wait": 5000,
+          "key": 50
+        }
+      ],
+      "cat": "shooter",
+      "genre": {
+        "nl": "Horizontale shoot-'em-up",
+        "en": "Horizontal shoot-'em-up"
+      },
+      "desc": {
+        "nl": "Klassieke zijwaarts scrollende ruimteshooter in de stijl van de arcadehallen.",
+        "en": "Classic side-scrolling space shooter in the arcade style."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen, spatie of Ctrl vuren (zie het startscherm).",
+        "en": "Arrows move, Space or Ctrl fire (see the start screen)."
+      },
+      "license": {
+        "nl": "Creative Commons BY-ND 3.0 (Ste Cork). Originele release, onveranderd.",
+        "en": "Creative Commons BY-ND 3.0 (Ste Cork). Original release, unmodified."
+      }
+    },
+    {
+      "id": "cyberdogs",
+      "title": "Cyberdogs",
+      "year": 1994,
+      "maker": "Ronny Wester",
+      "zip": "games/cyberdogs/dogs_v10.zip",
+      "start": "DOGS",
+      "cat": "shooter",
+      "genre": {
+        "nl": "Top-down shooter (1–2 spelers)",
+        "en": "Top-down shooter (1–2 players)"
+      },
+      "desc": {
+        "nl": "Voer missies uit in een doolhof van gangen, alleen of met z'n tweeën op één toetsenbord.",
+        "en": "Complete missions in a maze of corridors, alone or with two players on one keyboard."
+      },
+      "controls": {
+        "nl": "Toetsen instellen in het menu van het spel.",
+        "en": "Set the keys in the game's menu."
+      },
+      "license": {
+        "nl": "Freeware van maker Ronny Wester (1994). Origineel archief, onveranderd.",
+        "en": "Freeware by its author Ronny Wester (1994). Original archive, unmodified."
       }
     },
     {
@@ -149,8 +359,308 @@
       "controls": {
         "nl": "Pijltjes bewegen, Ctrl springen, Alt pogostick (zodra gevonden), Ctrl+Alt vuren, Esc menu.",
         "en": "Arrows move, Ctrl jump, Alt pogo stick (once found), Ctrl+Alt fire, Esc menu."
+      },
+      "cat": "platform"
+    },
+    {
+      "id": "jetpack",
+      "title": "Jetpack",
+      "year": 1993,
+      "maker": "Adam Pedersen (Adept Software)",
+      "zip": "games/jetpack/jetpak15.zip",
+      "dir": "jetpak15",
+      "start": "JETPACK",
+      "cat": "platform",
+      "genre": {
+        "nl": "Puzzel-platform",
+        "en": "Puzzle platformer"
+      },
+      "desc": {
+        "nl": "Verzamel alle edelstenen en vlieg met je jetpack naar de uitgang. 100 levels, inclusief Squarez Deluxe.",
+        "en": "Collect all the gems and fly to the exit with your jetpack. 100 levels, Squarez Deluxe included."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen, Alt jetpack, Ctrl phase shifter, F1 hulp, Q stoppen.",
+        "en": "Arrows move, Alt jetpack, Ctrl phase shifter, F1 help, Q quit."
+      },
+      "license": {
+        "nl": "Freeware sinds 1998 (Adam Pedersen). Origineel archief, onveranderd.",
+        "en": "Freeware since 1998 (Adam Pedersen). Original archive, unmodified."
       }
+    },
+    {
+      "id": "xargon",
+      "title": "Xargon",
+      "year": 1994,
+      "maker": "Allen Pilgrim / Epic MegaGames",
+      "zip": "games/xargon/Xargon_Commercial.zip",
+      "dir": "Xargon",
+      "start": "XARGON",
+      "cat": "platform",
+      "genre": {
+        "nl": "Platformspel",
+        "en": "Platformer"
+      },
+      "desc": {
+        "nl": "Alle drie de episodes van dit kleurrijke VGA-platformspel. Malvineous moet ontsnappen uit de wereld van Xargon.",
+        "en": "All three episodes of this colourful VGA platformer. Malvineous must escape the world of Xargon."
+      },
+      "controls": {
+        "nl": "Pijltjes bewegen; de volledige besturing staat in de hulp en het menu van het spel.",
+        "en": "Arrows move; the full controls are in the game's help and menu."
+      },
+      "license": {
+        "nl": "Freeware sinds 2008 door maker Allen Pilgrim (vrij te gebruiken). De oude 'commercial'-tekst in het archief is daardoor achterhaald.",
+        "en": "Freeware since 2008 by its author Allen Pilgrim (free to use). The old 'commercial' notice inside the archive is superseded."
+      }
+    },
+    {
+      "id": "electroman",
+      "title": "Electro Man",
+      "year": 1994,
+      "maker": "xLand / Epic MegaGames",
+      "zip": "games/electroman/em.zip",
+      "start": "EM",
+      "cat": "platform",
+      "genre": {
+        "nl": "Actie-platform",
+        "en": "Action platformer"
+      },
+      "desc": {
+        "nl": "Een cyborg vecht zich een weg door een futuristische basis vol robots.",
+        "en": "A cyborg fights his way through a futuristic base full of robots."
+      },
+      "controls": {
+        "nl": "Pijltjes links/rechts lopen, omhoog springen, omlaag teleporteren, spatie vuren, F2/F3 opslaan/laden.",
+        "en": "Arrows left/right walk, up jump, down teleport, Space fire, F2/F3 save/load."
+      },
+      "license": {
+        "nl": "Creative Commons BY-SA 2.5 (xLand, 2006). Originele release, onveranderd.",
+        "en": "Creative Commons BY-SA 2.5 (xLand, 2006). Original release, unmodified."
+      }
+    },
+    {
+      "id": "omf2097",
+      "title": "One Must Fall 2097",
+      "year": 1994,
+      "maker": "Diversions Entertainment / Epic MegaGames",
+      "zip": "games/omf2097/omf21cd.zip",
+      "unpack": [
+        {
+          "from": "OMF/OMF21.EXE",
+          "to": "OMF2097"
+        }
+      ],
+      "dir": "OMF2097",
+      "start": "OMF",
+      "keys": [
+        {
+          "wait": 9000,
+          "key": 264
+        },
+        {
+          "wait": 300,
+          "key": 264
+        },
+        {
+          "wait": 300,
+          "key": 264
+        },
+        {
+          "wait": 300,
+          "key": 264
+        },
+        {
+          "wait": 300,
+          "key": 257
+        },
+        {
+          "wait": 2500,
+          "key": 257
+        },
+        {
+          "wait": 2000,
+          "key": 257
+        }
+      ],
+      "cat": "action",
+      "genre": {
+        "nl": "Vechtspel",
+        "en": "Fighting"
+      },
+      "desc": {
+        "nl": "Gigantische vechtrobots in de arena. Kies een robot en een piloot en vecht je naar de top.",
+        "en": "Giant fighting robots in the arena. Pick a robot and a pilot and fight your way to the top."
+      },
+      "controls": {
+        "nl": "De toetsen stel je in onder Setup in het spelmenu. Kiest het spel bij de start niet zelf je geluid, kies dan Sound Blaster 16.",
+        "en": "Set the keys under Setup in the game menu. If the game doesn't pick the sound card by itself at the start, choose Sound Blaster 16."
+      },
+      "license": {
+        "nl": "Freeware sinds 1999 (Diversions Entertainment): niet-commerciële verspreiding toegestaan. Origineel archief, onveranderd; het installatiebestand wordt in je browser uitgepakt.",
+        "en": "Freeware since 1999 (Diversions Entertainment): non-commercial distribution allowed. Original archive, unmodified; the installer file is unpacked in your browser."
+      }
+    },
+    {
+      "id": "liero",
+      "title": "Liero",
+      "year": 1998,
+      "genre": {
+        "nl": "Actie / duel",
+        "en": "Action / duel"
+      },
+      "maker": "Joosa Riekkinen",
+      "license": {
+        "nl": "Freeware (Joosa Riekkinen, 1998–1999): vrij te verspreiden zonder wijzigingen. Origineel archief, onveranderd.",
+        "en": "Freeware (Joosa Riekkinen, 1998–1999): free to distribute without changes. Original archive, unmodified."
+      },
+      "zip": "games/liero/liero133.zip",
+      "start": "LIERO.EXE",
+      "desc": {
+        "nl": "Twee wormen, veertig wapens en een ninjatouw. Speel samen op één toetsenbord of tegen de computer.",
+        "en": "Two worms, forty weapons and a ninja rope. Play together on one keyboard or against the computer."
+      },
+      "controls": {
+        "nl": "Speler 1: D/G bewegen, R/F richten, links Ctrl vuren, links Shift wapen, links Alt springen. Speler 2: pijltjes, rechts Ctrl vuren, rechts Alt wapen, rechts Shift springen.",
+        "en": "Player 1: D/G move, R/F aim, left Ctrl fire, left Shift weapon, left Alt jump. Player 2: arrows, right Ctrl fire, right Alt weapon, right Shift jump."
+      },
+      "cat": "action"
     }
   ],
-  "planned": []
+  "planned": [],
+  "links": [
+    {
+      "id": "assaultcube",
+      "title": "AssaultCube",
+      "year": 2006,
+      "maker": "Rabid Viper Productions",
+      "link": "https://assault.cubers.net/",
+      "genre": {
+        "nl": "Online shooter (Counter-Strike-achtig)",
+        "en": "Online shooter (Counter-Strike style)"
+      },
+      "desc": {
+        "nl": "Snelle teamshooter met moderne wapens. Klein, draait op bijna elke pc.",
+        "en": "Fast team shooter with modern weapons. Small, runs on almost any PC."
+      },
+      "license": {
+        "nl": "Open source, gratis (Windows, Mac, Linux)",
+        "en": "Open source, free (Windows, Mac, Linux)"
+      }
+    },
+    {
+      "id": "openarena",
+      "title": "OpenArena",
+      "year": 2005,
+      "maker": "OpenArena-team",
+      "link": "https://www.openarena.ws/",
+      "genre": {
+        "nl": "Arena-shooter (Quake III-stijl)",
+        "en": "Arena shooter (Quake III style)"
+      },
+      "desc": {
+        "nl": "Gratis arena-shooter op de Quake III-engine, online of tegen bots.",
+        "en": "Free arena shooter on the Quake III engine, online or against bots."
+      },
+      "license": {
+        "nl": "Open source (GPL), gratis",
+        "en": "Open source (GPL), free"
+      }
+    },
+    {
+      "id": "flare",
+      "title": "Flare",
+      "year": 2010,
+      "maker": "Flare-team",
+      "link": "https://flarerpg.org/",
+      "genre": {
+        "nl": "Actie-RPG (Diablo-stijl)",
+        "en": "Action RPG (Diablo style)"
+      },
+      "desc": {
+        "nl": "Hakken, plunderen en sterker worden in donkere kerkers.",
+        "en": "Hack, loot and level up in dark dungeons."
+      },
+      "license": {
+        "nl": "Open source, gratis (Windows, Mac, Linux)",
+        "en": "Open source, free (Windows, Mac, Linux)"
+      }
+    },
+    {
+      "id": "freeciv",
+      "title": "Freeciv",
+      "year": 1996,
+      "maker": "Freeciv-team",
+      "link": "https://www.freeciv.org/",
+      "genre": {
+        "nl": "Strategie (Civilization-stijl)",
+        "en": "Strategy (Civilization style)"
+      },
+      "desc": {
+        "nl": "Bouw een beschaving van de steentijd tot de ruimtevaart.",
+        "en": "Build a civilization from the stone age to space flight."
+      },
+      "license": {
+        "nl": "Open source (GPL), gratis",
+        "en": "Open source (GPL), free"
+      }
+    },
+    {
+      "id": "freecol",
+      "title": "FreeCol",
+      "year": 2003,
+      "maker": "FreeCol-team",
+      "link": "https://www.freecol.org/",
+      "genre": {
+        "nl": "Strategie (Colonization-stijl)",
+        "en": "Strategy (Colonization style)"
+      },
+      "desc": {
+        "nl": "Sticht kolonies in de Nieuwe Wereld en vecht voor je onafhankelijkheid.",
+        "en": "Found colonies in the New World and fight for your independence."
+      },
+      "license": {
+        "nl": "Open source (GPL), gratis",
+        "en": "Open source (GPL), free"
+      }
+    },
+    {
+      "id": "cevo",
+      "title": "C-evo: New Horizons",
+      "year": 1999,
+      "maker": "Steffen Gerlach / Chronos",
+      "link": "https://chronoscz.itch.io/c-evo",
+      "genre": {
+        "nl": "Strategie (Civilization-stijl)",
+        "en": "Strategy (Civilization style)"
+      },
+      "desc": {
+        "nl": "Diepgaand Civilization-achtig strategiespel met sterke computertegenstanders.",
+        "en": "In-depth Civilization-style strategy game with strong computer opponents."
+      },
+      "license": {
+        "nl": "Gratis, open source",
+        "en": "Free, open source"
+      }
+    },
+    {
+      "id": "speeddreams",
+      "title": "Speed Dreams",
+      "year": 2010,
+      "maker": "Speed Dreams-team",
+      "link": "https://www.speed-dreams.net/",
+      "genre": {
+        "nl": "Racesimulatie",
+        "en": "Racing simulation"
+      },
+      "desc": {
+        "nl": "Racesimulator met formulewagens en circuits, het dichtst bij Grand Prix van MicroProse.",
+        "en": "Racing simulator with formula cars and circuits, the closest to MicroProse's Grand Prix."
+      },
+      "license": {
+        "nl": "Open source (GPL), gratis",
+        "en": "Open source (GPL), free"
+      }
+    }
+  ]
 }

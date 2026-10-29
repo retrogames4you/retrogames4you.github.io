@@ -13,12 +13,49 @@
 <body>
 <div id="dos"></div>
 <script src="vendor/js-dos/js-dos.js"></script>
+<script src="vendor/fflate/fflate.js"></script>
 <script>
 (() => {
   "use strict";
   // Each game runs in its own fresh frame; the arcade page sends what to run.
   const PATH_PREFIX = new URL("vendor/js-dos/emulators/", location.href).href;
   let started = false;
+
+  // Small ZIP reader (also handles self-extracting .EXE archives with a DOS stub in front).
+  function zipEntries(u8) {
+    const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength);
+    let eocd = -1;
+    for (let i = u8.length - 22; i >= Math.max(0, u8.length - 65557); i--) {
+      if (dv.getUint32(i, true) === 0x06054b50) { eocd = i; break; }
+    }
+    if (eocd < 0) return [];
+    const count = dv.getUint16(eocd + 10, true), cdSize = dv.getUint32(eocd + 12, true), cdOff = dv.getUint32(eocd + 16, true);
+    const shift = eocd - cdSize - cdOff;  // bytes in front of the zip data (SFX stub)
+    let p = cdOff + shift;
+    const out = [];
+    for (let n = 0; n < count; n++) {
+      if (dv.getUint32(p, true) !== 0x02014b50) break;
+      const method = dv.getUint16(p + 10, true), csize = dv.getUint32(p + 20, true);
+      const nl = dv.getUint16(p + 28, true), xl = dv.getUint16(p + 30, true), cl = dv.getUint16(p + 32, true);
+      const local = dv.getUint32(p + 42, true) + shift;
+      let name = ""; for (let i = 0; i < nl; i++) name += String.fromCharCode(u8[p + 46 + i]);
+      out.push({ name, method, csize, local });
+      p += 46 + nl + xl + cl;
+    }
+    return out;
+  }
+  function zipData(u8, e) {
+    const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength);
+    const start = e.local + 30 + dv.getUint16(e.local + 26, true) + dv.getUint16(e.local + 28, true);
+    const raw = u8.subarray(start, start + e.csize);
+    if (e.method === 0) return raw.slice();
+    if (e.method === 8) return fflate.inflateSync(raw);
+    throw new Error("Unsupported zip method " + e.method + " for " + e.name);
+  }
+  function zipExtract(u8, name) {
+    const e = zipEntries(u8).find(x => x.name.toLowerCase() === name.toLowerCase());
+    return e ? zipData(u8, e) : null;
+  }
   window.addEventListener("message", (e) => {
     if (e.origin !== location.origin || started) return;
     const d = e.data || {};
@@ -28,7 +65,20 @@
                    backend: "dosbox", backendLocked: true, theme: "dark" };
     if (d.url) opts.url = new URL(d.url, location.href).href;
     else {
-      opts.initFs = [new Uint8Array(d.bytes)];
+      const archive = new Uint8Array(d.bytes);
+      opts.initFs = [archive];
+      // Optional: unpack a self-extracting installer from the original archive here in the
+      // browser (what the game's own installer would do), e.g. One Must Fall's OMF21.EXE.
+      if (Array.isArray(d.unpack)) {
+        for (const u of d.unpack) {
+          const inner = zipExtract(archive, u.from);
+          if (!inner) continue;
+          for (const e of zipEntries(inner)) {
+            if (e.name.endsWith("/")) continue;
+            opts.initFs.push({ path: u.to + "/" + e.name, contents: zipData(inner, e) });
+          }
+        }
+      }
       if (d.conf) opts.dosboxConf = d.conf;
     }
     // Optional scripted key presses, e.g. to accept an original installer's defaults.
