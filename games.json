@@ -23,7 +23,8 @@
       "license": {
         "nl": "Freeware (Revolution Software, 2003): vrij te verspreiden, readme en copyright intact. Draait in ScummVM.",
         "en": "Freeware (Revolution Software, 2003): free to distribute, readme and copyright intact. Runs in ScummVM."
-      }
+      },
+      "thumb": "thumbs/bass.webp"
     },
     {
       "id": "fotaq",
@@ -48,7 +49,8 @@
       "license": {
         "nl": "Freeware (makers, 2004): vrij te verspreiden, readme en copyright intact. Draait in ScummVM.",
         "en": "Freeware (authors, 2004): free to distribute, readme and copyright intact. Runs in ScummVM."
-      }
+      },
+      "thumb": "thumbs/fotaq.webp"
     },
     {
       "id": "lure",
@@ -73,7 +75,8 @@
       "license": {
         "nl": "Freeware (Revolution Software): vrij te verspreiden, licentie en copyright intact. Draait in ScummVM.",
         "en": "Freeware (Revolution Software): free to distribute, licence and copyright intact. Runs in ScummVM."
-      }
+      },
+      "thumb": "thumbs/lure.webp"
     },
     {
       "id": "drascula",
@@ -98,7 +101,8 @@
       "license": {
         "nl": "Freeware (Alcachofa Soft, 2008): vrij te verspreiden, readme en copyright intact. Draait in ScummVM.",
         "en": "Freeware (Alcachofa Soft, 2008): free to distribute, readme and copyright intact. Runs in ScummVM."
-      }
+      },
+      "thumb": "thumbs/drascula.webp"
     },
     {
       "id": "soltys",
@@ -123,7 +127,8 @@
       "license": {
         "nl": "Freeware (LK Avalon, 2011): vrij te verspreiden, licentie en copyright intact. Draait in ScummVM.",
         "en": "Freeware (LK Avalon, 2011): free to distribute, licence and copyright intact. Runs in ScummVM."
-      }
+      },
+      "thumb": "thumbs/soltys.webp"
     },
     {
       "id": "maddog",
@@ -184,7 +189,8 @@
         "nl": "Officiële shareware van Epic MegaGames: gratis verspreiding toegestaan (niet via de winkel). Origineel archief, onveranderd.",
         "en": "Official Epic MegaGames shareware: free distribution allowed (not through retail). Original archive, unmodified."
       },
-      "extractAll": true
+      "extractAll": true,
+      "thumb": "thumbs/zzt.webp"
     },
     {
       "id": "superzzt",
@@ -219,7 +225,8 @@
       "license": {
         "nl": "Epic MegaGames-licentie: gratis verspreiding toegestaan (niet via de winkel). Origineel archief, onveranderd.",
         "en": "Epic MegaGames licence: free distribution allowed (not through retail). Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/superzzt.webp"
     },
     {
       "id": "catacomb",
@@ -251,7 +258,8 @@
       "license": {
         "nl": "Gratis promotiespel van Softdisk's Gamer's Edge, nooit verkocht. Origineel archief, onveranderd.",
         "en": "Free promotional game from Softdisk's Gamer's Edge, never sold. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/catacomb.webp"
     },
     {
       "id": "doom",
@@ -291,7 +299,8 @@
         "nl": "Pijltjes bewegen, Ctrl vuren, spatie deuren openen, Shift rennen, Alt zijwaarts, 1–7 wapens, Esc menu.",
         "en": "Arrows move, Ctrl fire, Space open doors, Shift run, Alt strafe, 1–7 weapons, Esc menu."
       },
-      "cat": "shooter"
+      "cat": "shooter",
+      "thumb": "thumbs/doom.webp"
     },
     {
       "id": "wolf3d",
@@ -325,7 +334,8 @@
         "nl": "Pijltjes bewegen, Ctrl vuren, spatie deuren openen, Shift rennen, Alt zijwaarts, 1–4 wapens, Esc menu.",
         "en": "Arrows move, Ctrl fire, Space open doors, Shift run, Alt strafe, 1–4 weapons, Esc menu."
       },
-      "cat": "shooter"
+      "cat": "shooter",
+      "thumb": "thumbs/wolf3d.webp"
     },
     {
       "id": "kenslab",
@@ -350,7 +360,8 @@
       "license": {
         "nl": "Volledige versie vrijgegeven door Ken Silverman met toestemming van Epic (1999): vrij te kopiëren, niet te verkopen. Origineel archief, onveranderd.",
         "en": "Full version released by Ken Silverman with Epic's permission (1999): free to copy, not for sale. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/kenslab.webp"
     },
     {
       "id": "td2192",
@@ -375,7 +386,8 @@
       "license": {
         "nl": "Creative Commons BY-ND 3.0 (P-Squared, 2007). Originele release, onveranderd.",
         "en": "Creative Commons BY-ND 3.0 (P-Squared, 2007). Original release, unmodified."
-      }
+      },
+      "thumb": "thumbs/td2192.webp"
     },
     {
       "id": "overkill",
@@ -407,7 +419,8 @@
       "license": {
         "nl": "Creative Commons BY-ND 3.0 (Ste Cork). Originele release, onveranderd.",
         "en": "Creative Commons BY-ND 3.0 (Ste Cork). Original release, unmodified."
-      }
+      },
+      "thumb": "thumbs/overkill.webp"
     },
     {
       "id": "xerix",
@@ -469,7 +482,8 @@
           "wait": 1500,
           "key": 51
         }
-      ]
+      ],
+      "thumb": "thumbs/xerix.webp"
     },
     {
       "id": "kiloblaster",
@@ -495,7 +509,8 @@
       "license": {
         "nl": "Freeware sinds 2008 door maker Allen Pilgrim (vrij te gebruiken).",
         "en": "Freeware since 2008 by its author Allen Pilgrim (free to use)."
-      }
+      },
+      "thumb": "thumbs/kiloblaster.webp"
     },
     {
       "id": "astrofire",
@@ -520,7 +535,8 @@
       "license": {
         "nl": "Freeware, vrijgegeven door ORT Software (2013). Origineel archief, onveranderd.",
         "en": "Freeware, released by ORT Software (2013). Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/astrofire.webp"
     },
     {
       "id": "cyberdogs",
@@ -545,7 +561,8 @@
       "license": {
         "nl": "Freeware van maker Ronny Wester (1994). Origineel archief, onveranderd.",
         "en": "Freeware by its author Ronny Wester (1994). Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/cyberdogs.webp"
     },
     {
       "id": "keen1",
@@ -601,7 +618,8 @@
         "nl": "Pijltjes bewegen, Ctrl springen, Alt pogostick (zodra gevonden), Ctrl+Alt vuren, Esc menu.",
         "en": "Arrows move, Ctrl jump, Alt pogo stick (once found), Ctrl+Alt fire, Esc menu."
       },
-      "cat": "platform"
+      "cat": "platform",
+      "thumb": "thumbs/keen1.webp"
     },
     {
       "id": "keen4",
@@ -672,7 +690,8 @@
       "license": {
         "nl": "Officiële shareware-episode van id Software / Apogee, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
         "en": "Official shareware episode by id Software / Apogee, freely distributable in its original form. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/keen4.webp"
     },
     {
       "id": "duke1",
@@ -743,7 +762,8 @@
       "license": {
         "nl": "Officiële shareware-episode van Apogee, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
         "en": "Official shareware episode by Apogee, freely distributable in its original form. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/duke1.webp"
     },
     {
       "id": "duke2",
@@ -814,7 +834,8 @@
       "license": {
         "nl": "Officiële shareware-episode van Apogee, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
         "en": "Official shareware episode by Apogee, freely distributable in its original form. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/duke2.webp"
     },
     {
       "id": "crystalcaves",
@@ -885,7 +906,8 @@
       "license": {
         "nl": "Officiële shareware-episode van Apogee, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
         "en": "Official shareware episode by Apogee, freely distributable in its original form. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/crystalcaves.webp"
     },
     {
       "id": "secretagent",
@@ -956,7 +978,8 @@
       "license": {
         "nl": "Officiële shareware-episode van Apogee, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
         "en": "Official shareware episode by Apogee, freely distributable in its original form. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/secretagent.webp"
     },
     {
       "id": "cosmo",
@@ -1027,7 +1050,8 @@
       "license": {
         "nl": "Officiële shareware-episode van Apogee, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
         "en": "Official shareware episode by Apogee, freely distributable in its original form. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/cosmo.webp"
     },
     {
       "id": "jill",
@@ -1058,7 +1082,8 @@
       "license": {
         "nl": "Officiële shareware-episode van Epic MegaGames: verspreiding in de originele vorm toegestaan. Origineel archief, onveranderd.",
         "en": "Official Epic MegaGames shareware episode: distribution in its original form allowed. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/jill.webp"
     },
     {
       "id": "captaincomic",
@@ -1084,7 +1109,8 @@
       "license": {
         "nl": "Shareware die volgens de maker vrij herverdeeld mag worden, onveranderd. Het archief wordt in je browser uitgepakt.",
         "en": "Shareware that per the author may be freely redistributed, unmodified. The archive is unpacked in your browser."
-      }
+      },
+      "thumb": "thumbs/captaincomic.webp"
     },
     {
       "id": "dave",
@@ -1110,7 +1136,8 @@
       "license": {
         "nl": "Gratis promotiespel van Softdisk's Gamer's Edge, nooit verkocht. Origineel archief, onveranderd.",
         "en": "Free promotional game from Softdisk's Gamer's Edge, never sold. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/dave.webp"
     },
     {
       "id": "clyde",
@@ -1135,7 +1162,8 @@
       "license": {
         "nl": "Freeware, vrijgegeven door Moonlite Software. Origineel archief, onveranderd.",
         "en": "Freeware, released by Moonlite Software. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/clyde.webp"
     },
     {
       "id": "jetpack",
@@ -1161,7 +1189,8 @@
       "license": {
         "nl": "Freeware sinds 1998 (Adam Pedersen). Origineel archief, onveranderd.",
         "en": "Freeware since 1998 (Adam Pedersen). Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/jetpack.webp"
     },
     {
       "id": "jetpackxmas",
@@ -1186,7 +1215,8 @@
       "license": {
         "nl": "Freeware, vrijgegeven door Adam Pedersen (1993). Origineel archief, onveranderd.",
         "en": "Freeware, released by Adam Pedersen (1993). Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/jetpackxmas.webp"
     },
     {
       "id": "xargon",
@@ -1212,7 +1242,8 @@
       "license": {
         "nl": "Freeware sinds 2008 door maker Allen Pilgrim (vrij te gebruiken). De oude 'commercial'-tekst in het archief is daardoor achterhaald.",
         "en": "Freeware since 2008 by its author Allen Pilgrim (free to use). The old 'commercial' notice inside the archive is superseded."
-      }
+      },
+      "thumb": "thumbs/xargon.webp"
     },
     {
       "id": "electroman",
@@ -1237,7 +1268,8 @@
       "license": {
         "nl": "Creative Commons BY-SA 2.5 (xLand, 2006). Originele release, onveranderd.",
         "en": "Creative Commons BY-SA 2.5 (xLand, 2006). Original release, unmodified."
-      }
+      },
+      "thumb": "thumbs/electroman.webp"
     },
     {
       "id": "skyroads",
@@ -1262,7 +1294,8 @@
       "license": {
         "nl": "Freeware (Bluemoon Interactive): vrij te verspreiden zolang het onveranderd en compleet is.",
         "en": "Freeware (Bluemoon Interactive): free to distribute as long as it is unmodified and complete."
-      }
+      },
+      "thumb": "thumbs/skyroads.webp"
     },
     {
       "id": "skyxmas",
@@ -1287,7 +1320,8 @@
       "license": {
         "nl": "Freeware (Bluemoon Interactive): vrij te verspreiden zolang het onveranderd en compleet is.",
         "en": "Freeware (Bluemoon Interactive): free to distribute as long as it is unmodified and complete."
-      }
+      },
+      "thumb": "thumbs/skyxmas.webp"
     },
     {
       "id": "kosmonaut",
@@ -1312,7 +1346,8 @@
       "license": {
         "nl": "Freeware, vrijgegeven door BlueMoon Software. Origineel archief, onveranderd.",
         "en": "Freeware, released by BlueMoon Software. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/kosmonaut.webp"
     },
     {
       "id": "turbo",
@@ -1337,7 +1372,8 @@
       "license": {
         "nl": "Freeware van maker Doug Ross (1987). Origineel archief, onveranderd.",
         "en": "Freeware by its author Doug Ross (1987). Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/turbo.webp"
     },
     {
       "id": "arcadevolley",
@@ -1362,7 +1398,8 @@
       "license": {
         "nl": "Publiek domein (Rhett Anderson). Origineel archief, onveranderd.",
         "en": "Public domain (Rhett Anderson). Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/arcadevolley.webp"
     },
     {
       "id": "chopper",
@@ -1387,7 +1424,8 @@
       "license": {
         "nl": "Freeware, vrijgegeven door Mark Currie (met broncode). Origineel archief, onveranderd.",
         "en": "Freeware, released by Mark Currie (met broncode). Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/chopper.webp"
     },
     {
       "id": "duel2000",
@@ -1437,7 +1475,8 @@
       "license": {
         "nl": "Freeware, vrijgegeven door Dan Hilton. Origineel archief, onveranderd.",
         "en": "Freeware, released by Dan Hilton. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/basketball.webp"
     },
     {
       "id": "scorched",
@@ -1463,7 +1502,8 @@
       "license": {
         "nl": "Shareware van Wendell Hicken, vrij te verspreiden. Het archief wordt in je browser uitgepakt.",
         "en": "Shareware by Wendell Hicken, freely distributable. The archive is unpacked in your browser."
-      }
+      },
+      "thumb": "thumbs/scorched.webp"
     },
     {
       "id": "omf2097",
@@ -1525,7 +1565,8 @@
       "license": {
         "nl": "Freeware sinds 1999 (Diversions Entertainment): niet-commerciële verspreiding toegestaan. Origineel archief, onveranderd; het installatiebestand wordt in je browser uitgepakt.",
         "en": "Freeware since 1999 (Diversions Entertainment): non-commercial distribution allowed. Original archive, unmodified; the installer file is unpacked in your browser."
-      }
+      },
+      "thumb": "thumbs/omf2097.webp"
     },
     {
       "id": "sango",
@@ -1550,7 +1591,8 @@
       "license": {
         "nl": "Freeware (Super Fighter Team, 2009): vrij te verspreiden zolang niets gewijzigd wordt.",
         "en": "Freeware (Super Fighter Team, 2009): free to distribute as long as nothing is modified."
-      }
+      },
+      "thumb": "thumbs/sango.webp"
     },
     {
       "id": "liero",
@@ -1575,7 +1617,8 @@
         "nl": "Speler 1: D/G bewegen, R/F richten, links Ctrl vuren, links Shift wapen, links Alt springen. Speler 2: pijltjes, rechts Ctrl vuren, rechts Alt wapen, rechts Shift springen.",
         "en": "Player 1: D/G move, R/F aim, left Ctrl fire, left Shift weapon, left Alt jump. Player 2: arrows, right Ctrl fire, right Alt weapon, right Shift jump."
       },
-      "cat": "action"
+      "cat": "action",
+      "thumb": "thumbs/liero.webp"
     },
     {
       "id": "heartlight",
@@ -1600,7 +1643,8 @@
       "license": {
         "nl": "Creative Commons BY-SA 2.5 (xLand, 2006). Originele release, onveranderd.",
         "en": "Creative Commons BY-SA 2.5 (xLand, 2006). Original release, unmodified."
-      }
+      },
+      "thumb": "thumbs/heartlight.webp"
     },
     {
       "id": "robbo",
@@ -1625,19 +1669,20 @@
       "license": {
         "nl": "Creative Commons BY-SA 2.5 (xLand, 2006). Originele release, onveranderd.",
         "en": "Creative Commons BY-SA 2.5 (xLand, 2006). Original release, unmodified."
-      }
+      },
+      "thumb": "thumbs/robbo.webp"
     },
     {
       "id": "boppin",
-      "title": "Boppin'",
+      "title": "Boppin' (shareware)",
       "year": 1994,
       "maker": "Accursed Toys",
-      "zip": "games/boppin/boppinr.zip",
+      "zip": "games/boppin/1bop11.zip",
       "cat": "puzzle",
       "autoexec": [
         "INSTALL",
         "SETUP",
-        "BOPPIN"
+        "BOPSW"
       ],
       "keys": [
         {
@@ -1670,9 +1715,10 @@
         "en": "After installation SETUP starts: choose SoundBlaster for sound and music. Arrows and Space in the game."
       },
       "license": {
-        "nl": "Freeware, vrijgegeven door Accursed Toys. Origineel archief, onveranderd.",
-        "en": "Freeware, released by Accursed Toys. Original archive, unmodified."
-      }
+        "nl": "Officiële shareware-episode, vrij te verspreiden in de originele vorm. Origineel archief, onveranderd.",
+        "en": "Official shareware episode, freely distributable in its original form. Original archive, unmodified."
+      },
+      "thumb": "thumbs/boppin.webp"
     },
     {
       "id": "tcb",
@@ -1697,7 +1743,8 @@
       "license": {
         "nl": "Freeware, vrijgegeven door Moonlite Software. Origineel archief, onveranderd.",
         "en": "Freeware, released by Moonlite Software. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/tcb.webp"
     },
     {
       "id": "kentris",
@@ -1722,7 +1769,8 @@
       "license": {
         "nl": "Freeware, vrijgegeven door Ken Silverman. Origineel archief, onveranderd.",
         "en": "Freeware, released by Ken Silverman. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/kentris.webp"
     },
     {
       "id": "psionchess",
@@ -1753,7 +1801,8 @@
       "license": {
         "nl": "Freeware, vrijgegeven door Richard Lang en Psion. Origineel archief, onveranderd.",
         "en": "Freeware, released by Richard Lang and Psion. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/psionchess.webp"
     },
     {
       "id": "mahjongg",
@@ -1778,7 +1827,8 @@
       "license": {
         "nl": "Freeware, vrijgegeven door Ron Balewski. Origineel archief, onveranderd.",
         "en": "Freeware, released by Ron Balewski. Original archive, unmodified."
-      }
+      },
+      "thumb": "thumbs/mahjongg.webp"
     }
   ],
   "planned": [],
