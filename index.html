@@ -87,6 +87,10 @@ dialog.ra-player::backdrop{background:rgba(5,4,12,.85)}
 .ra-screen > div{position:absolute;inset:0}
 .ra-player-help{padding:8px 14px;font-size:.85rem;color:var(--soft);background:var(--bg2);border-top:1px solid var(--line)}
 
+.ra-support{border-top:1px solid var(--line);padding:40px 0;background:linear-gradient(90deg,rgba(255,176,0,.10),rgba(63,224,208,.06))}
+.ra-support-in{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.ra-support h2{font-family:"Press Start 2P",monospace;font-size:1rem;line-height:1.5;margin:0 0 8px;color:var(--amber)}
+.ra-support p{margin:0;color:var(--soft);max-width:62ch}
 footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--soft);font-size:.88rem}
 footer p{margin:6px 0;max-width:80ch}
 .ra-empty{color:var(--soft);font-style:italic}
@@ -166,10 +170,20 @@ footer p{margin:6px 0;max-width:80ch}
   </section>
 </main>
 
+<section class="ra-support" aria-labelledby="support-title">
+  <div class="ra-wrap ra-support-in">
+    <div>
+      <h2 id="support-title" data-i18n="support.title">Steun de arcade</h2>
+      <p data-i18n="support.body">Alle spellen blijven gratis. Wil je helpen om de speelhal online te houden en nieuwe klassiekers toe te voegen? Een kleine gift via Liberapay maakt het verschil.</p>
+    </div>
+    <a class="ra-btn" href="https://liberapay.com/retrogames4you/donate" target="_blank" rel="noopener" data-i18n="support.btn">Doneer via Liberapay</a>
+  </div>
+</section>
+
 <footer>
   <div class="ra-wrap">
     <p data-i18n="foot.legal">Alle spellen in de speelhal zijn door hun makers vrijgegeven als freeware, open source of shareware die vrij verspreid mag worden. De licentie staat bij elk spel. Merken en namen zijn eigendom van hun respectieve eigenaars.</p>
-    <p><span data-i18n="foot.engine">Emulator:</span> <a href="https://github.com/caiiiycuk/js-dos">js-dos</a> (<a href="vendor/js-dos/NOTICE.txt">GPL-2.0</a>) · <a href="https://www.scummvm.org">ScummVM</a> (<a href="scummvm/NOTICE.txt">GPL-2.0+</a>) · fflate (<a href="vendor/fflate/LICENSE">MIT</a>), <span data-i18n="foot.engine2">gebaseerd op DOSBox.</span></p>
+    <p><span data-i18n="foot.engine">Emulator:</span> <a href="https://github.com/caiiiycuk/js-dos">js-dos</a> (<a href="vendor/js-dos/NOTICE.txt">GPL-2.0</a>, <span data-i18n="foot.engine2">gebaseerd op DOSBox</span>) · <a href="https://www.scummvm.org">ScummVM</a> (<a href="scummvm/NOTICE.txt">GPL-2.0+</a>) · fflate (<a href="vendor/fflate/LICENSE">MIT</a>)</p>
   </div>
 </footer>
 
@@ -203,7 +217,8 @@ const T = {
   "own.none":"Geen .EXE, .COM of .BAT gevonden. Je kunt het spel toch openen en zelf starten via de DOS-prompt.",
   "own.bad":"Dit lijkt geen geldig .zip-bestand.","own.bundle":"js-dos-bundel herkend: klaar om te spelen.",
   "foot.legal":"Alle spellen in de speelhal zijn door hun makers vrijgegeven als freeware, open source of shareware die vrij verspreid mag worden. De licentie staat bij elk spel. Merken en namen zijn eigendom van hun respectieve eigenaars.",
-  "foot.engine":"Emulator:","foot.engine2":"gebaseerd op DOSBox.",
+  "foot.engine":"Emulator:",
+  "support.title":"Steun de arcade","support.body":"Alle spellen blijven gratis. Wil je helpen om de speelhal online te houden en nieuwe klassiekers toe te voegen? Een kleine gift via Liberapay maakt het verschil.","support.btn":"Doneer via Liberapay","foot.engine2":"gebaseerd op DOSBox",
   "player.full":"Volledig scherm","player.close":"Sluiten",
   "player.help":"Klik eerst in het beeld zodat het spel je toetsen ontvangt. Esc verlaat volledig scherm.",
   "card.play":"Spelen","card.soon":"Binnenkort","card.license":"Licentie","card.visit":"Naar de website",
@@ -226,7 +241,8 @@ const T = {
   "own.none":"No .EXE, .COM or .BAT found. You can still open it and start the game yourself from the DOS prompt.",
   "own.bad":"This doesn't look like a valid .zip file.","own.bundle":"js-dos bundle detected: ready to play.",
   "foot.legal":"All games in the arcade hall were released by their makers as freeware, open source or freely distributable shareware. The licence is shown with each game. Trademarks and names belong to their respective owners.",
-  "foot.engine":"Emulator:","foot.engine2":"based on DOSBox.",
+  "support.title":"Support the arcade","support.body":"All games stay free. Want to help keep the arcade online and add new classics? A small gift via Liberapay makes a difference.","support.btn":"Donate via Liberapay",
+  "foot.engine":"Emulator:","foot.engine2":"based on DOSBox",
   "player.full":"Full screen","player.close":"Close",
   "player.help":"Click inside the picture first so the game receives your keys. Esc leaves full screen.",
   "card.play":"Play","card.soon":"Coming soon","card.license":"Licence","card.visit":"Visit website",
