@@ -9,3 +9,4 @@ Classic PC games released for free by their makers, playable in the browser.
 - Game archives are kept unmodified (`games/`, `data/games/`); each entry in `games.json` states its licence.
 - Own games run as plain HTML pages in a frame (`engine: "page"`).
 - *Under the Loop* (`games/under-the-loop/`) is © 2026 Gunther Donné, all rights reserved. It is not freeware, shareware or open source and is not covered by any licence in this repository: no copying, modification or redistribution without written permission. (Its sound effects are by Kenney, CC0.)
+- *Mafioso 3D* (`games/mafioso-3d/`) is © 2026 Gunther Donné, all rights reserved, under the same terms as *Under the Loop*. Its first-person weapon hand sprites are "FPS Weapon Sprites" by Ragnar Random (CC0, opengameart.org).

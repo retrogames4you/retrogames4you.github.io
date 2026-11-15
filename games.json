@@ -45,6 +45,48 @@
    "hero": "thumbs/underloop-hero.png"
   },
   {
+   "id": "mafioso3d",
+   "title": "Mafioso 3D",
+   "year": 2026,
+   "maker": "Gunther Donné",
+   "engine": "page",
+   "page": "games/mafioso-3d/index.html",
+   "cat": "shooter",
+   "genre": {
+    "nl": "3D-shooter (nieuw, in Wolfenstein 3D-stijl)",
+    "en": "3D shooter (new, Wolfenstein 3D style)",
+    "fr": "Jeu de tir 3D (nouveau, style Wolfenstein 3D)",
+    "de": "3D-Shooter (neu, im Stil von Wolfenstein 3D)",
+    "es": "Shooter 3D (nuevo, estilo Wolfenstein 3D)",
+    "pt": "Shooter 3D (novo, estilo Wolfenstein 3D)"
+   },
+   "desc": {
+    "nl": "De actieversie van Under the Loop. Vinnie Two-Times daalt alleen af in de tunnels onder Manhattan, 1929, met een Colt .45 en een slecht humeur. Twaalf hoofdstukken, een riotgeweer, een tommygun en dynamiet, alligators, wolven, een tweekoppige panter, corrupte agenten en huurmoordenaars, en de Don zelf. Spel in het Engels.",
+    "en": "The action version of Under the Loop. Vinnie Two-Times goes down alone into the tunnels under Manhattan, 1929, with a Colt .45 and a bad attitude. Twelve chapters, a trench gun, a Tommy gun and dynamite, alligators, wolves, a two-headed panther, crooked cops and hitmen, and the Don himself.",
+    "fr": "La version action de Under the Loop. Vinnie Two-Times descend seul dans les tunnels sous Manhattan, 1929, avec un Colt .45 et un sale caractère. Douze chapitres, un fusil de tranchée, une Thompson et de la dynamite, des alligators, des loups, une panthère à deux têtes, des flics ripoux, des tueurs à gages et le Don en personne. Jeu en anglais.",
+    "de": "Die Action-Version von Under the Loop. Vinnie Two-Times steigt allein in die Tunnel unter Manhattan, 1929, mit einem Colt .45 und schlechter Laune. Zwölf Kapitel, Grabenflinte, Tommy Gun und Dynamit, Alligatoren, Wölfe, ein zweiköpfiger Panther, korrupte Polizisten, Auftragskiller und der Don persönlich. Spiel auf Englisch.",
+    "es": "La versión de acción de Under the Loop. Vinnie Two-Times baja solo a los túneles bajo Manhattan, 1929, con un Colt .45 y mal genio. Doce capítulos, escopeta de trinchera, metralleta Thompson y dinamita, caimanes, lobos, una pantera de dos cabezas, policías corruptos, sicarios y el mismísimo Don. Juego en inglés.",
+    "pt": "A versão de ação de Under the Loop. Vinnie Two-Times desce sozinho aos túneis sob Manhattan, 1929, com uma Colt .45 e mau feitio. Doze capítulos, espingarda de trincheira, metralhadora Thompson e dinamite, jacarés, lobos, uma pantera de duas cabeças, polícias corruptos, assassinos a soldo e o próprio Don. Jogo em inglês."
+   },
+   "controls": {
+    "nl": "Klik eerst in het beeld. W/S bewegen, A/D zijwaarts, muis of ←/→ draaien, klikken schieten, Spatie gebruiken, 1–5 wapens, R steen gooien, Tab kaart, Esc pauze.",
+    "en": "Click the picture first. W/S move, A/D strafe, mouse or ←/→ turn, click to shoot, Space use, 1–5 weapons, R throw a rock, Tab map, Esc pause.",
+    "fr": "Cliquez d’abord dans l’image. W/S avancer, A/D de côté, souris ou ←/→ tourner, clic pour tirer, Espace utiliser, 1–5 armes, R lancer une pierre, Tab carte, Échap pause.",
+    "de": "Zuerst ins Bild klicken. W/S bewegen, A/D seitwärts, Maus oder ←/→ drehen, Klick schießen, Leertaste benutzen, 1–5 Waffen, R Stein werfen, Tab Karte, Esc Pause.",
+    "es": "Primero haz clic en la imagen. W/S moverse, A/D lateral, ratón o ←/→ girar, clic disparar, Espacio usar, 1–5 armas, R lanzar piedra, Tab mapa, Esc pausa.",
+    "pt": "Clique primeiro na imagem. W/S mover, A/D lateral, rato ou ←/→ virar, clique para disparar, Espaço usar, 1–5 armas, R atirar pedra, Tab mapa, Esc pausa."
+   },
+   "license": {
+    "nl": "© 2026 Gunther Donné. Alle rechten voorbehouden. Gratis te spelen op deze site; geen freeware, shareware of open source. Handen met wapens: Ragnar Random (CC0).",
+    "en": "© 2026 Gunther Donné. All rights reserved. Free to play on this site; not freeware, shareware or open source. Weapon hands: Ragnar Random (CC0).",
+    "fr": "© 2026 Gunther Donné. Tous droits réservés. Jouable gratuitement sur ce site ; ni freeware, ni shareware, ni open source. Mains et armes : Ragnar Random (CC0).",
+    "de": "© 2026 Gunther Donné. Alle Rechte vorbehalten. Auf dieser Seite kostenlos spielbar; keine Freeware, Shareware oder Open Source. Waffenhände: Ragnar Random (CC0).",
+    "es": "© 2026 Gunther Donné. Todos los derechos reservados. Gratis para jugar en este sitio; no es freeware, shareware ni código abierto. Manos con armas: Ragnar Random (CC0).",
+    "pt": "© 2026 Gunther Donné. Todos os direitos reservados. Grátis para jogar neste site; não é freeware, shareware nem código aberto. Mãos com armas: Ragnar Random (CC0)."
+   },
+   "thumb": "thumbs/mafioso3d.webp"
+  },
+  {
    "id": "bass",
    "title": "Beneath a Steel Sky",
    "year": 1994,
