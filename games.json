@@ -33,12 +33,12 @@
     "pt": "W/S ou setas avançar/recuar, A/D ou setas virar, Shift+esq/dir passo lateral. Espaço usar, 1–6 atacar com a mão direita (Shift = mão esquerda), I inventário. Rato para armas e objetos."
    },
    "license": {
-    "nl": "Eigen spel van de arcade, gratis te spelen. Geluiden: Kenney (CC0).",
-    "en": "The arcade’s own game, free to play. Sounds: Kenney (CC0).",
-    "fr": "Jeu maison de l’arcade, gratuit. Sons : Kenney (CC0).",
-    "de": "Eigenes Spiel der Arcade, kostenlos spielbar. Sounds: Kenney (CC0).",
-    "es": "Juego propio del arcade, gratis. Sonidos: Kenney (CC0).",
-    "pt": "Jogo próprio do arcade, gratuito. Sons: Kenney (CC0)."
+    "nl": "© 2026 Gunther Donné. Alle rechten voorbehouden. Gratis te spelen op deze site; geen freeware, shareware of open source.",
+    "en": "© 2026 Gunther Donné. All rights reserved. Free to play on this site; not freeware, shareware or open source.",
+    "fr": "© 2026 Gunther Donné. Tous droits réservés. Jouable gratuitement sur ce site ; ni freeware, ni shareware, ni open source.",
+    "de": "© 2026 Gunther Donné. Alle Rechte vorbehalten. Auf dieser Seite kostenlos spielbar; keine Freeware, Shareware oder Open Source.",
+    "es": "© 2026 Gunther Donné. Todos los derechos reservados. Gratis para jugar en este sitio; no es freeware, shareware ni código abierto.",
+    "pt": "© 2026 Gunther Donné. Todos os direitos reservados. Grátis para jogar neste site; não é freeware, shareware nem código aberto."
    },
    "thumb": "thumbs/underloop.webp"
   },
