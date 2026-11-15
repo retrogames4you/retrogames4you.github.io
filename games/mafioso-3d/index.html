@@ -1975,7 +1975,7 @@ LEVELS[0]={name:'Chapter 1 · Under the Loop',w:48,h:36,start:[37,1,2],train:tru
   links:{'37,0':{exit:true}},pits:{},
   scripts:{
     '36,10':{msg:'A rusted steam main bursts over your head with a shriek!',shake:12,hurt:4,sfx:'boom'},
-    '34,16':{msg:'Doors bang open up on the east gallery. Castellano gunmen!',spawn:[['thug',44,17],['thug',43,23]],sfx:'clang'},
+    '34,16':{msg:'A clatter of boots in the air vent above. Castellano men are coming down from the junction!',spawn:[['thug',45,15],['thug',45,15]],sfx:'clang'},
     '10,13':{msg:'Something big splashes down in the dark water below.',sfx:'rubble'},
     '10,22':{msg:'Voices and a radio playing, just ahead. The Castellano hideout.',sfx:'step'}},
   texts:{'36,6':'Chalked by the cellar stairs: “THE RATS DOWN THERE AIN’T NORMAL. — V.M.”',
@@ -2809,7 +2809,8 @@ function drawSpritesSW(t,eye,hor){SPQ.length=0;const ca=Math.cos(PL.a),sa=Math.s
     for(let x=xa;x<xb;x++){
       for(let y=ya;y<=yb;y++){const i=y*RW+x;if(ZB[i]<=dep)continue;const fy=(y-yT)/hh,uf=(x-x0-ln*(1-fy))/(x1-x0);if(uf<0||uf>=1)continue;const u=(uf*p.w)|0,v=Math.min(p.h-1,(fy*p.h)|0);let c=p.d[v*p.w+u];if((c>>>24)<128)continue;
         if(s.tint)c=(c&0xff000000)|((((c>>16)&255)>>1)<<16)|((((c>>8)&255)>>1)<<8)|Math.min(255,(c&255)+120);FB32[i]=shade(c,k);ZB[i]=dep}}}}
-function queueEnemy(e,t){const T=ETYPES[e.t],sp=SPR[T.img];if(!sp)return;const[wx,wy]=epos(e),zb=gFH(e.x,e.y);
+function queueEnemy(e,t){const T=ETYPES[e.t],sp=SPR[T.img];if(!sp)return;const[wx,wy]=epos(e);let zb=gFH(e.x,e.y);
+  if(e.mT&&t-e.mT<e.mDur&&e.fx!=null){const p=(t-e.mT)/e.mDur,z0=gFH(e.fx,e.fy);zb=z0>zb?z0+(zb-z0)*p*p:z0+(zb-z0)*p}   // smooth steps; drops fall
   if(e.hp<=0){if(!e.dT)return;const el=t-e.dT,[p1,tot]=sp.d2?[200,560]:[300,300];
     if(sp.d1&&el<tot){const img=(el<p1||!sp.d2?sp.d1:sp.d2)[0];spriteAt(img,wx,wy,zb,T.scale,T.scale,t);return}
     if(sp.d3){const w=T.scale*(BODY[T.img]||1.1),img=sp.d3[0];spriteAt(img,wx,wy,zb-.02,w/2,w,t);return}
@@ -2837,7 +2838,7 @@ function updateZ(dt){const fh=gFH(Math.floor(PL.x),Math.floor(PL.y)),ch=gCH(Math
 const _syncFromGrid2=syncFromGrid;syncFromGrid=function(){_syncFromGrid2();PL.z=gFH(S.px,S.py);PL.vz=0};
 // enemies may not climb ledges (dropping down is fine)
 const _updateEnemiesH=updateEnemies;updateEnemies=function(t){_updateEnemiesH(t);if(!LV.geo)return;
-  for(const e of S.enemies){if(e.hp<=0||e.mT!==t)continue;if(gFH(e.x,e.y)-gFH(e.fx,e.fy)>.38&&!isLadder(e.x,e.y)&&!isLadder(e.fx,e.fy)){e.x=e.fx;e.y=e.fy;e.mT=0}}};
+  for(const e of S.enemies){if(e.hp<=0||e.mT!==t)continue;if(gFH(e.x,e.y)-gFH(e.fx,e.fy)>.38){e.x=e.fx;e.y=e.fy;e.mT=0}}};
 // hook Z update into the main loop
 const _fpsFrame2=fpsFrame;fpsFrame=function(t){if(S.started&&!S.over)updateZ(Math.min(.05,(t-(PL.lt||t))/1000));PL.lt=t;return _fpsFrame2(t)};
 // ---- extra wall textures for the open levels ----
@@ -2852,7 +2853,8 @@ TEX['c']=mk(64,64,g=>{g.fillStyle='#6a4a2a';g.fillRect(0,0,64,64);for(let y=0;y<
   g.fillStyle='#c8b080';g.font='bold 9px Georgia';g.textAlign='center';g.fillText('CANADA',32,26);g.fillText('MAPLE SYRUP',32,42)});
 TEX['stone']=TEX['R'];
 // ---- enemies and heights ----
-function canStep(x0,y0,x1,y1,e){if(!LV.geo)return true;const a=gFH(x0,y0),b=gFH(x1,y1);if(b-a>.38&&!isLadder(x0,y0)&&!isLadder(x1,y1))return false;if(gCH(x1,y1)-b<.9)return false;return true}
+function canStep(x0,y0,x1,y1,e){if(!LV.geo)return true;const a=gFH(x0,y0),b=gFH(x1,y1);if(b-a>.38)return false;   // enemies never climb ledges or ladders
+  if(gCH(x1,y1)-b<.9)return false;return true}
 function canReach(e){if(!LV.geo)return true;return Math.abs(gFH(e.x,e.y)-PL.z)<.65}
 const _computeDistH=computeDist;computeDist=function(){if(!LV.geo)return _computeDistH();if(dist.length!==MW*MH)dist=new Int16Array(MW*MH);dist.fill(999);const q=[S.px+S.py*MW];dist[q[0]]=0;
   for(let h=0;h<q.length;h++){const v=q[h],x=v%MW,y=(v/MW)|0;for(let k=0;k<4;k++){const nx=x+DX[k],ny=y+DY[k];if(!isFloor(cell(nx,ny)))continue;if(!canStep(nx,ny,x,y))continue;const n=nx+ny*MW;if(dist[n]>dist[v]+1){dist[n]=dist[v]+1;q.push(n)}}}};
@@ -2868,7 +2870,12 @@ hitscan=function(a){const w=rayWall(PL.x,PL.y,a);let best=null,bd=w.d;const ca=M
 // ---- scripted moments ----
 const _onCellS=onCell;onCell=function(){const b=S.gx+','+S.gy;_onCellS();const k=S.gx+','+S.gy;if(k===b||!LV.scripts)return;const sc=LV.scripts[k];S.done=S.done||{};const id=S.lvl+':'+k;
   if(!sc||S.done[id])return;S.done[id]=1;msg(sc.msg,'warn');if(sc.sfx)sfx(sc.sfx);if(sc.shake)S.shake=sc.shake;if(sc.hurt)hurtParty(sc.hurt,false,'scalding steam');
-  for(const[t,x,y]of sc.spawn||[]){const L=LV.lineup,nt=L?lineupMap(t,L):t,e=E_(nt,x,y);e.aware=true;e.nextMove=now()+600;e.nextAtk=now()+900;S.enemies.push(e)}};
+  for(const sp of sc.spawn||[])(S.pend=S.pend||[]).push(sp)};
+// scripted reinforcements only appear where you can't see them appear, then walk in
+const _updateEnemiesP=updateEnemies;updateEnemies=function(t){_updateEnemiesP(t);if(!S.pend||!S.pend.length||!S.started||S.over)return;
+  S.pend=S.pend.filter(([ty,x,y])=>{if(enemyAt(x,y)||(Math.floor(PL.x)===x&&Math.floor(PL.y)===y))return true;
+    if(Math.hypot(PL.x-x-.5,PL.y-y-.5)<14&&los3D(x+.5,y+.5,gFH(x,y)+.5,PL.x,PL.y,PL.z+PL.eyeH))return true;
+    const L=LV.lineup,nt=L?lineupMap(ty,L):ty,e=E_(nt,x,y);e.aware=true;e.paced=1;e.nextMove=t+400;e.nextAtk=t+900;S.enemies.push(e);return false})};
 // ---- automap: shade by height ----
 const _drawAutomapH=drawAutomap;drawAutomap=function(){if(!LV.geo)return _drawAutomapH();const s=Math.max(3,Math.min(6,Math.floor(Math.min((RW-20)/MW,(RH-20)/MH)))),ox=(RW-MW*s)/2|0,oy=(RH-MH*s)/2|0;
   M3X.fillStyle='rgba(0,0,0,.78)';M3X.fillRect(ox-4,oy-4,MW*s+8,MH*s+8);
