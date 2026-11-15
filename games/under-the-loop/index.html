@@ -479,12 +479,13 @@ function inLineOfFire(e,r){if(e.x!==S.px&&e.y!==S.py)return false;const dx=Math.
 function updateEnemies(t){
   computeDist();
   for(const e of S.enemies){if(e.hp<=0)continue;const T=ETYPES[e.t],d=dist[e.x+e.y*MW];
-    if(!e.aware){if(d<=T.sense){e.aware=true;e.nextAtk=t+700;e.nextMove=t+300;sfx(T.sfx==='shot'?'step':T.sfx);
+    if(!e.aware){if(d<=T.sense){e.aware=true;e.nextAtk=t+Math.min(700,T.atk);e.nextMove=t+T.move;sfx(T.sfx==='shot'?'step':T.sfx);
       if(T.ranged)msg(e.t==='boss'?'“Big Nose” Castellano: “You got some nerve, comin’ down here!”':'“Hey! Moretti’s boys!”','bad')}else continue}
+    if(!e.paced){e.paced=1;e.nextMove=Math.max(e.nextMove,t+T.move)}
     const adj=Math.abs(e.x-S.px)+Math.abs(e.y-S.py)===1&&d===1;
-    if(adj){if(t>=e.nextAtk){e.nextAtk=t+T.atk;e.aT=t;sfx(T.atkSfx||T.sfx);
+    if(adj){e.nextMove=Math.max(e.nextMove,t+T.move);if(t>=e.nextAtk){e.nextAtk=t+T.atk;e.aT=t;sfx(T.atkSfx||T.sfx);
         if(Math.random()<T.acc){S.fxq.push({k:e.t,t});const vi=hurtParty(Math.round(R(...T.dmg)*(e.dmgMul||1)),!!T.ranged,T.name);if(vi>=0&&T.poison&&Math.random()<T.poison)poisonChar(vi,t)}else if(T.ranged)msg('A shot whines off the brick.')}continue}
-    if(T.ranged&&inLineOfFire(e,T.ranged)){if(t>=e.nextAtk){e.nextAtk=t+T.atk;e.aT=t;sfx('shot');if(Math.random()<T.acc){S.fxq.push({k:'gun',t});hurtParty(Math.round(R(...T.dmg)*(e.dmgMul||1)),true,T.name)}else msg('A bullet sparks off the rails.')}continue}
+    if(T.ranged&&inLineOfFire(e,T.ranged)){e.nextMove=Math.max(e.nextMove,t+T.move);if(t>=e.nextAtk){e.nextAtk=t+T.atk;e.aT=t;sfx('shot');if(Math.random()<T.acc){S.fxq.push({k:'gun',t});hurtParty(Math.round(R(...T.dmg)*(e.dmgMul||1)),true,T.name)}else msg('A bullet sparks off the rails.')}continue}
     if(t>=e.nextMove&&d<40){e.nextMove=t+T.move;let best=null;
       for(let k=0;k<4;k++){const nx=e.x+DX[k],ny=e.y+DY[k];if(!isFloor(cell(nx,ny))||cell(nx,ny)==='q'||enemyAt(nx,ny)||npcAt(nx,ny)||(nx===S.px&&ny===S.py))continue;if(dist[nx+ny*MW]<d){best=[nx,ny];break}}
       if(best){e.fx=e.x;e.fy=e.y;e.mT=t;e.mDur=Math.min(T.move*.8,420);e.x=best[0];e.y=best[1]}}
@@ -2140,6 +2141,12 @@ addEventListener('keydown',e=>{if(e.code==='Escape'&&document.querySelector('#ov
 const _updateRecruits=updateRecruits;updateRecruits=function(t){_updateRecruits(t);
   for(const e of S.enemies)if(e.t==='turncoat'&&e.hp>0&&e.cashLoot==null){e.cashLoot=S.cash||0;S.cash=0;if(e.cashLoot)msg(`…and the bankroll too: $${e.cashLoot}.`,'bad')}};
 const _hitEnemy2=hitEnemy;hitEnemy=function(e,dmg,p){const alive=e.hp>0;_hitEnemy2(e,dmg,p);if(alive&&e.hp<=0&&e.cashLoot){S.cash=(S.cash||0)+e.cashLoot;msg(`You take back your $${e.cashLoot}.`,'good');e.cashLoot=0}};
+// ---------- enemy pace: one steady rhythm per creature; small things are quick, big things slow ----------
+Object.assign(ETYPES.ratling,{move:450});Object.assign(ETYPES.spider,{move:650});Object.assign(ETYPES.rat,{move:750});Object.assign(ETYPES.snake,{move:850});
+for(const[k,T]of Object.entries(ETYPES)){if(!T.ranged)continue;T.move=k==='don'?1350:k==='thug'||k==='turncoat'?1150:1250}
+// timers restart whenever a level is entered or a game is loaded (stored times belong to another moment)
+const _loadLevel=loadLevel;loadLevel=function(n,place){_loadLevel(n,place);const t=now();
+  for(const e of S.enemies){const T=ETYPES[e.t];if(!T)continue;e.paced=0;e.nextMove=t+T.move+Math.random()*200;e.nextAtk=t+Math.min(700,T.atk);e.mT=0}};
 
 </script>
 </body>
