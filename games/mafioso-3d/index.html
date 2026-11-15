@@ -2486,7 +2486,7 @@ addEventListener('mousemove',e=>{if(locked&&!S.over)PL.a+=e.movementX*.0024});
 function fpsPause(){if(!S.started||S.over)return;document.exitPointerLock&&document.exitPointerLock();S.over=true;paused=true;
   overlay(`<h2>Paused</h2><div class="date">${LV.name}</div><p>Your progress is saved automatically at the start of every chapter.</p>
   <button onclick="fpsResume()">Resume</button> <button onclick="fpsSave();msg('Checkpoint saved.','good');fpsResume()">Save checkpoint here</button> <button onclick="showTitle()">Title screen</button>
-  <p class="note">W/S or ↑/↓ move · A/D or Shift+←/→ strafe · ←/→ or mouse turn · click or Ctrl shoot · Space or right-click use · 1–5 weapons · R throw a rock · Tab map · Esc pause</p>`)}
+  <p class="note">W/S or ↑/↓ move · A/D or Shift+←/→ strafe · ←/→ or mouse turn · click or Ctrl shoot · Space or right-click use · 1–5 weapons · R throw a rock · Tab map · N sound on/off · Esc pause</p>`)}
 function fpsResume(){document.getElementById('overlay').style.display='none';S.over=false;paused=false;M3C.focus()}
 
 // ---------- use (doors, levers, buttons, handles, Izzy) ----------
@@ -2672,7 +2672,7 @@ showTitle=function(){S.started=false;S.over=true;document.getElementById('overla
     <p><b>Move:</b> W/S or ↑/↓, strafe with A/D or Shift+←/→, turn with the mouse or ←/→. Hold Shift to run. Click the view first so the game takes the mouse.</p>
     <p><b>Fight:</b> click or Ctrl to shoot. 1 fists, 2 Colt .45, 3 trench gun, 4 Tommy gun, 5 dynamite (find them first). R throws a rock: it sets off trapdoors two squares ahead.</p>
     <p><b>Use:</b> Space, E or right-click opens doors, pulls levers, presses wall buttons, works trapdoor handles, reads chalk on the walls and talks to Izzy the peddler. Walk over things to pick them up.</p>
-    <p><b>Tricks:</b> Tab shows the map. Keys open the steel doors. Pressure plates open gates for good once weighed down. Every chapter starts with a checkpoint.</p>
+    <p><b>Tricks:</b> Tab shows the map. N turns the sound on or off. Keys open the steel doors. Pressure plates open gates for good once weighed down. Every chapter starts with a checkpoint.</p>
     <p class="note">${COPYRIGHT}</p><button id="hback">Back</button>`);document.getElementById('hback').onclick=()=>{document.getElementById('overlay').style.display='none';showTitle()}}};
 const _showIntroF=showIntro;showIntro=function(i){_showIntroF(i);const b=document.getElementById('inext');if(b&&i===INTRO.length-1)b.textContent='Go down ▸'};
 INTRO[2].t='Under Manhattan lies a second city of subway tunnels, sewers and forgotten stations. Vinnie Two-Times goes down alone, with a Colt .45 and a bad attitude. Bring the ledger home.';
@@ -2914,7 +2914,16 @@ hurtParty=function(dmg,ranged,src){const p=S.party[0];if(!p||p.hp<=0||S.over)ret
   if(p.hp<=0){p.hp=0;p.poison=null;lose(src)}return 0};
 const _loadLevelD=loadLevel;loadLevel=function(n,place){const fresh=!S.store[n];_loadLevelD(n,place);if(fresh&&DIFFS[DIFF].hp!==1)for(const e of S.enemies)e.hp=Math.max(1,Math.round(e.hp*DIFFS[DIFF].hp))};
 const _showTitleD=showTitle;showTitle=function(){_showTitleD();const box=document.querySelector('#titlescr .tbtns');if(!box)return;const b=document.createElement('button');b.id='tdiff';
-  const lab=()=>b.textContent='Difficulty: '+DIFFS[DIFF].name;lab();b.onclick=()=>{const o=['easy','normal','hard'];setDiff(o[(o.indexOf(DIFF)+1)%3]);lab()};box.appendChild(b)};
+  const lab=()=>b.textContent='Difficulty: '+DIFFS[DIFF].name;lab();b.onclick=()=>{const o=['easy','normal','hard'];setDiff(o[(o.indexOf(DIFF)+1)%3]);lab()};box.appendChild(b)
+  const m=document.createElement('button');m.id='tsound';const ml=()=>m.textContent='Sound: '+(muted?'off':'on');ml();m.onclick=()=>{setSound(muted);ml()};box.appendChild(m)};
+
+// ---- sound on/off (title screen, pause menu, or N key), remembered ----
+function setSound(on){muted=!on;try{localStorage.setItem('maf-sound',on?'on':'off')}catch(e){}try{if(AC){if(muted)AC.suspend();else AC.resume()}}catch(e){}
+  const hb=document.getElementById('mute');if(hb)hb.textContent='Sound: '+(muted?'off':'on')}
+try{if(localStorage.getItem('maf-sound')==='off')muted=true}catch(e){}
+addEventListener('keydown',e=>{if(e.code==='KeyN'&&S.started){setSound(muted);msg('Sound '+(muted?'off':'on')+'.')}},true);
+const _fpsPauseS=fpsPause;fpsPause=function(){_fpsPauseS();const ov=document.getElementById('overlay');if(!ov||ov.style.display!=='flex')return;const btns=ov.querySelectorAll('button');const last=btns[btns.length-1];if(!last)return;
+  const m=document.createElement('button');m.textContent='Sound: '+(muted?'off':'on');m.onclick=()=>{setSound(muted);m.textContent='Sound: '+(muted?'off':'on')};last.after(' ',m)};
 
 </script>
 </body>
