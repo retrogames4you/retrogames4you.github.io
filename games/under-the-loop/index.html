@@ -2288,6 +2288,36 @@ const _useHandBomb=useHand;useHand=function(ci,h){const p=S.party[ci];if(!p)retu
       if(S.party.every(q=>q.hp<=0))lose('their own '+(d.fire?'firebomb':'dynamite'))}
     else if(!kills&&!d.fire)msg('The explosion rolls down the tunnel and shakes dust from the ceiling.')},lag)};
 
+// =================== GATES STAY OPEN ===================
+// © 2026 Gunther Donné. All rights reserved.
+// Once a gate is opened (lever, wall button or pressure plate) it stays open for good: no timers, and plates never close it again.
+const GATE_MSG={
+ 0:{'3,18':'You pull the signal lever. Far up the tunnel, a storeroom gate rattles open.'},
+ 1:{'21,13':'You haul the lever down. Somewhere to the west, a gate grinds open.'},
+ 3:{'29,8':'You heave the pump lever. Far to the west, the river gate rattles open.'},
+ 5:{'24,11':'You throw the guard-room lever. At the end of the bridge, the solitary gate rattles up.'},
+ 7:{'13,12':'You crank the weir lever. Far down the conduit, the outflow gate grinds up.'},
+ 8:{'31,11':'You throw the main holder lever. The gate into the gasholder hall grinds open.'},
+ 10:{'30,15':'You pull the armory lever. The grand stair gate lifts.'},
+ 11:{'30,4':'You throw the vault lever. The gate down to Mulberry Bend lifts.'}};
+const GATE_TEXT={
+ 3:{'24,11':'Chalk under the pump lever: “RIVER GATE’S ON THE FAR SIDE OF THE TUBES. LONG WALK.”'},
+ 5:{'21,13':'Scratched into the guard-room wall: “SOLITARY GATE ON THE LEVER.”'},
+ 7:{'12,10':'Chalk by the weir: “THE WEIR LEVER WORKS THE OUTFLOW GATE ON THE FAR SIDE.”'},
+ 8:{'31,13':'Stencilled by the lever: “MAIN HOLDER GATE.”'},
+ 10:{'30,13':'Scratched in the armory: “grand stair gate on the lever.”'},
+ 11:{'30,5':'Chalk by the lever: “Mulberry Bend gate.”'}};
+LEVELS.forEach((L,i)=>{for(const[k,T]of Object.entries(L.trig)){
+  if(T.timer){delete T.timer;if(T.type==='button')T.msg='You press the stone button. Close by, a barred gate grinds open.'}
+  if(GATE_MSG[i]&&GATE_MSG[i][k])T.msg=GATE_MSG[i][k];if(T.type==='plate')delete T.offmsg}
+  for(const[k,t]of Object.entries((GATE_TEXT[i]||{})))if(L.texts&&L.texts[k])L.texts[k]=t});
+// pressure plates: weight opens the gate once; taking the weight away no longer shuts it
+updateTriggers=function(t){
+  for(const[k,T]of Object.entries(LV.trig))if(T.type==='plate'){const w=plateWeighed(k);if(!w||S.plates[k])continue;S.plates[k]=true;
+    const shut=T.acts.some(([op,c])=>{const[x,y]=c.split(',').map(Number);return map[y][x]!=='.'});
+    if(shut){sfx('click');runTrig(k,true);sfx('clang');msg(T.msg,'gold')}}
+  S.timers=[]};
+
 </script>
 </body>
 </html>
