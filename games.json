@@ -40,7 +40,9 @@
     "es": "© 2026 Gunther Donné. Todos los derechos reservados. Gratis para jugar en este sitio; no es freeware, shareware ni código abierto.",
     "pt": "© 2026 Gunther Donné. Todos os direitos reservados. Grátis para jogar neste site; não é freeware, shareware nem código aberto."
    },
-   "thumb": "thumbs/underloop.webp"
+   "thumb": "thumbs/underloop.webp",
+   "featured": true,
+   "hero": "thumbs/underloop-hero.png"
   },
   {
    "id": "bass",
