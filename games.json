@@ -1,6 +1,48 @@
 {
  "games": [
   {
+   "id": "underloop",
+   "title": "Under the Loop",
+   "year": 2026,
+   "maker": "Gunther Donné",
+   "engine": "page",
+   "page": "games/under-the-loop/index.html",
+   "cat": "adventure",
+   "genre": {
+    "nl": "Dungeon crawler (nieuw, in Eye of the Beholder-stijl)",
+    "en": "Dungeon crawler (new, Eye of the Beholder style)",
+    "fr": "Dungeon crawler (nouveau, style Eye of the Beholder)",
+    "de": "Dungeon Crawler (neu, im Stil von Eye of the Beholder)",
+    "es": "Dungeon crawler (nuevo, estilo Eye of the Beholder)",
+    "pt": "Dungeon crawler (novo, estilo Eye of the Beholder)"
+   },
+   "desc": {
+    "nl": "New York, 1929. Leid een maffiabende door de metrotunnels en riolen onder Manhattan: 12 hoofdstukken vol ratten, reuzenspinnen, slangen en gangsters, met sleutels, hendels, drukplaten en geheime gangen. Kies 4 van 6 personages en red onderweg nieuwe bendeleden, maar pas op voor dieven en verraders. Spel in het Engels.",
+    "en": "New York, 1929. Lead a mob crew through the subway tunnels and sewers under Manhattan: 12 chapters of rats, giant spiders, snakes and gangsters, with keys, levers, pressure plates and secret passages. Pick 4 of 6 characters and rescue new crew members on the way, but watch out for thieves and traitors.",
+    "fr": "New York, 1929. Menez une bande de mafieux dans les tunnels du métro et les égouts sous Manhattan : 12 chapitres de rats, d’araignées géantes, de serpents et de gangsters, avec clés, leviers, plaques de pression et passages secrets. Choisissez 4 personnages sur 6 et libérez de nouveaux membres en route, mais méfiez-vous des voleurs et des traîtres. Jeu en anglais.",
+    "de": "New York, 1929. Führe eine Mafia-Truppe durch die U-Bahn-Tunnel und Kanäle unter Manhattan: 12 Kapitel voller Ratten, Riesenspinnen, Schlangen und Gangster, mit Schlüsseln, Hebeln, Druckplatten und Geheimgängen. Wähle 4 von 6 Figuren und befreie unterwegs neue Mitglieder – aber Vorsicht vor Dieben und Verrätern. Spiel auf Englisch.",
+    "es": "Nueva York, 1929. Guía a una banda mafiosa por los túneles del metro y las cloacas bajo Manhattan: 12 capítulos de ratas, arañas gigantes, serpientes y gánsteres, con llaves, palancas, placas de presión y pasadizos secretos. Elige 4 de 6 personajes y rescata nuevos miembros por el camino, pero cuidado con ladrones y traidores. Juego en inglés.",
+    "pt": "Nova Iorque, 1929. Lidere um bando mafioso pelos túneis do metro e esgotos sob Manhattan: 12 capítulos de ratos, aranhas gigantes, cobras e gangsters, com chaves, alavancas, placas de pressão e passagens secretas. Escolha 4 de 6 personagens e resgate novos membros pelo caminho, mas cuidado com ladrões e traidores. Jogo em inglês."
+   },
+   "controls": {
+    "nl": "W/S of pijltjes vooruit/achteruit, A/D of pijltjes draaien, Shift+links/rechts zijwaarts. Spatie gebruiken, 1–6 aanvallen met rechterhand (Shift = linkerhand), I inventaris. Muis voor wapens en spullen.",
+    "en": "W/S or arrows forward/back, A/D or arrows turn, Shift+left/right strafe. Space use, 1–6 attack with right hand (Shift = left hand), I inventory. Mouse for weapons and items.",
+    "fr": "W/S ou flèches avancer/reculer, A/D ou flèches tourner, Maj+gauche/droite pas de côté. Espace utiliser, 1–6 attaquer main droite (Maj = main gauche), I inventaire. Souris pour armes et objets.",
+    "de": "W/S oder Pfeile vor/zurück, A/D oder Pfeile drehen, Umschalt+links/rechts seitwärts. Leertaste benutzen, 1–6 Angriff rechte Hand (Umschalt = linke Hand), I Inventar. Maus für Waffen und Gegenstände.",
+    "es": "W/S o flechas avanzar/retroceder, A/D o flechas girar, Mayús+izq/der paso lateral. Espacio usar, 1–6 atacar con la mano derecha (Mayús = mano izquierda), I inventario. Ratón para armas y objetos.",
+    "pt": "W/S ou setas avançar/recuar, A/D ou setas virar, Shift+esq/dir passo lateral. Espaço usar, 1–6 atacar com a mão direita (Shift = mão esquerda), I inventário. Rato para armas e objetos."
+   },
+   "license": {
+    "nl": "Eigen spel van de arcade, gratis te spelen. Geluiden: Kenney (CC0).",
+    "en": "The arcade’s own game, free to play. Sounds: Kenney (CC0).",
+    "fr": "Jeu maison de l’arcade, gratuit. Sons : Kenney (CC0).",
+    "de": "Eigenes Spiel der Arcade, kostenlos spielbar. Sounds: Kenney (CC0).",
+    "es": "Juego propio del arcade, gratis. Sonidos: Kenney (CC0).",
+    "pt": "Jogo próprio do arcade, gratuito. Sons: Kenney (CC0)."
+   },
+   "thumb": "thumbs/underloop.webp"
+  },
+  {
    "id": "bass",
    "title": "Beneath a Steel Sky",
    "year": 1994,

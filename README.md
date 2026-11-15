@@ -7,3 +7,4 @@ Classic PC games released for free by their makers, playable in the browser.
 - Point-and-click adventures run in the [ScummVM](https://www.scummvm.org) web build (GPL-2.0+, `scummvm/`, see `scummvm/NOTICE.txt`).
 - In-browser unzip: [fflate](https://github.com/101arrowz/fflate) (MIT, `vendor/fflate/`).
 - Game archives are kept unmodified (`games/`, `data/games/`); each entry in `games.json` states its licence.
+- Own games run as plain HTML pages in a frame (`engine: "page"`), e.g. *Under the Loop* (`games/under-the-loop/`, sounds by Kenney, CC0).
