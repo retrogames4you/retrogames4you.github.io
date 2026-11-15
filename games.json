@@ -42,7 +42,23 @@
    },
    "thumb": "thumbs/underloop.webp",
    "featured": true,
-   "hero": "thumbs/underloop-hero.png"
+   "hero": "thumbs/underloop-hero.png",
+   "fsub": {
+    "nl": "New York, 1929 · een nieuwe dungeon crawler",
+    "en": "New York, 1929 · a brand-new dungeon crawler",
+    "fr": "New York, 1929 · un tout nouveau dungeon crawler",
+    "de": "New York, 1929 · ein brandneuer Dungeon Crawler",
+    "es": "Nueva York, 1929 · un dungeon crawler nuevo",
+    "pt": "Nova Iorque, 1929 · um dungeon crawler novinho"
+   },
+   "flead": {
+    "nl": "Leid een maffiabende door de metrotunnels en riolen onder Manhattan, in de stijl van Eye of the Beholder. Twaalf hoofdstukken met alligators, wolven, dobermanns, een tweekoppige panter, corrupte agenten en huurmoordenaars, met valluiken, hendels, geheime gangen, verraders en een eindbaas. Spel in het Engels.",
+    "en": "Lead a mob crew through the subway tunnels and sewers under Manhattan, Eye of the Beholder style. Twelve chapters of alligators, wolves, Dobermans, a two-headed panther, crooked cops and Tommy-gun torpedoes, with trapdoors, levers, secret passages, traitors and a final boss.",
+    "fr": "Menez une bande de mafieux dans les tunnels du métro et les égouts sous Manhattan, à la manière d’Eye of the Beholder. Douze chapitres d’alligators, de loups, de dobermans, d’une panthère à deux têtes, de flics ripoux et de tueurs à gages, avec trappes, leviers, passages secrets, traîtres et un boss final. Jeu en anglais.",
+    "de": "Führe eine Mafia-Truppe durch die U-Bahn-Tunnel und Kanäle unter Manhattan, im Stil von Eye of the Beholder. Zwölf Kapitel mit Alligatoren, Wölfen, Dobermännern, einem zweiköpfigen Panther, korrupten Polizisten und Auftragskillern, mit Falltüren, Hebeln, Geheimgängen, Verrätern und einem Endgegner. Spiel auf Englisch.",
+    "es": "Guía a una banda mafiosa por los túneles del metro y las cloacas bajo Manhattan, al estilo de Eye of the Beholder. Doce capítulos de caimanes, lobos, dóberman, una pantera de dos cabezas, policías corruptos y sicarios, con trampillas, palancas, pasadizos secretos, traidores y un jefe final. Juego en inglés.",
+    "pt": "Lidere um bando mafioso pelos túneis do metro e esgotos sob Manhattan, ao estilo de Eye of the Beholder. Doze capítulos de jacarés, lobos, dobermanns, uma pantera de duas cabeças, polícias corruptos e assassinos a soldo, com alçapões, alavancas, passagens secretas, traidores e um chefe final. Jogo em inglês."
+   }
   },
   {
    "id": "mafioso3d",
@@ -53,12 +69,12 @@
    "page": "games/mafioso-3d/index.html",
    "cat": "shooter",
    "genre": {
-    "nl": "3D-shooter (nieuw, in Wolfenstein 3D-stijl)",
-    "en": "3D shooter (new, Wolfenstein 3D style)",
-    "fr": "Jeu de tir 3D (nouveau, style Wolfenstein 3D)",
-    "de": "3D-Shooter (neu, im Stil von Wolfenstein 3D)",
-    "es": "Shooter 3D (nuevo, estilo Wolfenstein 3D)",
-    "pt": "Shooter 3D (novo, estilo Wolfenstein 3D)"
+    "nl": "3D-shooter (nieuw, in Doom-stijl)",
+    "en": "3D shooter (new, Doom style)",
+    "fr": "Jeu de tir 3D (nouveau, style Doom)",
+    "de": "3D-Shooter (neu, im Stil von Doom)",
+    "es": "Shooter 3D (nuevo, estilo Doom)",
+    "pt": "Shooter 3D (novo, estilo Doom)"
    },
    "desc": {
     "nl": "De actieversie van Under the Loop. Vinnie Two-Times daalt alleen af in de tunnels onder Manhattan, 1929, met een Colt .45 en een slecht humeur. Twaalf hoofdstukken, een riotgeweer, een tommygun en dynamiet, alligators, wolven, een tweekoppige panter, corrupte agenten en huurmoordenaars, en de Don zelf. Spel in het Engels.",
@@ -69,12 +85,12 @@
     "pt": "A versão de ação de Under the Loop. Vinnie Two-Times desce sozinho aos túneis sob Manhattan, 1929, com uma Colt .45 e mau feitio. Doze capítulos, espingarda de trincheira, metralhadora Thompson e dinamite, jacarés, lobos, uma pantera de duas cabeças, polícias corruptos, assassinos a soldo e o próprio Don. Jogo em inglês."
    },
    "controls": {
-    "nl": "Klik eerst in het beeld. W/S bewegen, A/D zijwaarts, muis of ←/→ draaien, klikken schieten, Spatie gebruiken, 1–5 wapens, R steen gooien, Tab kaart, Esc pauze.",
-    "en": "Click the picture first. W/S move, A/D strafe, mouse or ←/→ turn, click to shoot, Space use, 1–5 weapons, R throw a rock, Tab map, Esc pause.",
-    "fr": "Cliquez d’abord dans l’image. W/S avancer, A/D de côté, souris ou ←/→ tourner, clic pour tirer, Espace utiliser, 1–5 armes, R lancer une pierre, Tab carte, Échap pause.",
-    "de": "Zuerst ins Bild klicken. W/S bewegen, A/D seitwärts, Maus oder ←/→ drehen, Klick schießen, Leertaste benutzen, 1–5 Waffen, R Stein werfen, Tab Karte, Esc Pause.",
-    "es": "Primero haz clic en la imagen. W/S moverse, A/D lateral, ratón o ←/→ girar, clic disparar, Espacio usar, 1–5 armas, R lanzar piedra, Tab mapa, Esc pausa.",
-    "pt": "Clique primeiro na imagem. W/S mover, A/D lateral, rato ou ←/→ virar, clique para disparar, Espaço usar, 1–5 armas, R atirar pedra, Tab mapa, Esc pausa."
+    "nl": "Klik eerst in het beeld. W/S bewegen, A/D of Shift+←/→ zijwaarts, muis of ←/→ draaien, klikken schieten, Spatie gebruiken, 1–5 wapens, R steen gooien, Tab kaart, N geluid, Esc pauze. Moeilijkheidsgraad op het titelscherm.",
+    "en": "Click the picture first. W/S move, A/D or Shift+←/→ strafe, mouse or ←/→ turn, click to shoot, Space use, 1–5 weapons, R throw a rock, Tab map, N sound, Esc pause. Difficulty on the title screen.",
+    "fr": "Cliquez d’abord dans l’image. W/S avancer, A/D ou Maj+←/→ de côté, souris ou ←/→ tourner, clic pour tirer, Espace utiliser, 1–5 armes, R lancer une pierre, Tab carte, N son, Échap pause. Difficulté sur l’écran titre.",
+    "de": "Zuerst ins Bild klicken. W/S bewegen, A/D oder Umschalt+←/→ seitwärts, Maus oder ←/→ drehen, Klick schießen, Leertaste benutzen, 1–5 Waffen, R Stein werfen, Tab Karte, N Ton, Esc Pause. Schwierigkeit im Titelbild.",
+    "es": "Primero haz clic en la imagen. W/S moverse, A/D o Mayús+←/→ lateral, ratón o ←/→ girar, clic disparar, Espacio usar, 1–5 armas, R lanzar piedra, Tab mapa, N sonido, Esc pausa. Dificultad en la pantalla de título.",
+    "pt": "Clique primeiro na imagem. W/S mover, A/D ou Shift+←/→ lateral, rato ou ←/→ virar, clique para disparar, Espaço usar, 1–5 armas, R atirar pedra, Tab mapa, N som, Esc pausa. Dificuldade no ecrã de título."
    },
    "license": {
     "nl": "© 2026 Gunther Donné. Alle rechten voorbehouden. Gratis te spelen op deze site; geen freeware, shareware of open source. Handen met wapens: Ragnar Random (CC0).",
@@ -84,7 +100,25 @@
     "es": "© 2026 Gunther Donné. Todos los derechos reservados. Gratis para jugar en este sitio; no es freeware, shareware ni código abierto. Manos con armas: Ragnar Random (CC0).",
     "pt": "© 2026 Gunther Donné. Todos os direitos reservados. Grátis para jogar neste site; não é freeware, shareware nem código aberto. Mãos com armas: Ragnar Random (CC0)."
    },
-   "thumb": "thumbs/mafioso3d.webp"
+   "thumb": "thumbs/mafioso3d.webp",
+   "featured": true,
+   "hero": "thumbs/mafioso3d-hero.png",
+   "fsub": {
+    "nl": "New York, 1929 · een nieuwe 3D-shooter",
+    "en": "New York, 1929 · a brand-new 3D shooter",
+    "fr": "New York, 1929 · un tout nouveau jeu de tir 3D",
+    "de": "New York, 1929 · ein brandneuer 3D-Shooter",
+    "es": "Nueva York, 1929 · un shooter 3D nuevo",
+    "pt": "Nova Iorque, 1929 · um shooter 3D novinho"
+   },
+   "flead": {
+    "nl": "De actieversie van Under the Loop, in Doom-stijl. Vinnie Two-Times daalt alleen af onder Manhattan: grote stationshallen met galerijen, stoomtunnels, overstroomde riolen en ventilatieschachten, met een Colt .45, een tommygun en dynamiet tegen ratten, alligators, wolven en de hele Castellano-familie.",
+    "en": "The action version of Under the Loop, Doom style. Vinnie Two-Times goes down alone under Manhattan: vast station halls with galleries, steam tunnels, flooded sewers and air vents, with a Colt .45, a Tommy gun and dynamite against rats, alligators, wolves and the whole Castellano family.",
+    "fr": "La version action de Under the Loop, façon Doom. Vinnie Two-Times descend seul sous Manhattan : immenses halls de gare avec galeries, tunnels à vapeur, égouts inondés et conduits d’aération, avec un Colt .45, une Thompson et de la dynamite contre les rats, les alligators, les loups et toute la famille Castellano.",
+    "de": "Die Action-Version von Under the Loop im Doom-Stil. Vinnie Two-Times steigt allein unter Manhattan hinab: riesige Bahnhofshallen mit Galerien, Dampftunnel, überflutete Kanäle und Lüftungsschächte, mit Colt .45, Tommy Gun und Dynamit gegen Ratten, Alligatoren, Wölfe und die ganze Castellano-Familie.",
+    "es": "La versión de acción de Under the Loop, al estilo Doom. Vinnie Two-Times baja solo bajo Manhattan: enormes vestíbulos de estación con galerías, túneles de vapor, cloacas inundadas y conductos de ventilación, con un Colt .45, una Thompson y dinamita contra ratas, caimanes, lobos y toda la familia Castellano.",
+    "pt": "A versão de ação de Under the Loop, ao estilo Doom. Vinnie Two-Times desce sozinho sob Manhattan: enormes átrios de estação com galerias, túneis de vapor, esgotos inundados e condutas de ventilação, com uma Colt .45, uma Thompson e dinamite contra ratos, jacarés, lobos e toda a família Castellano."
+   }
   },
   {
    "id": "bass",
