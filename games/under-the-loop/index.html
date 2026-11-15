@@ -2218,12 +2218,23 @@ function procSet(im){const fog=src=>[0,1,2,3,4,5,6].map(l=>mk(src.width,src.heig
 function deathFrames(im,human){const W=im.width,H=im.height,P=procSet(im);
   const d1=mk(W,H,g=>{g.translate(W/2,H);g.rotate(human?-.12:-.18);g.translate(-W/2,-H);g.drawImage(im,0,H*.04);g.setTransform(1,0,0,1,0,0);g.globalCompositeOperation='source-atop';g.fillStyle='rgba(200,20,10,.35)';g.fillRect(0,0,W,H)});
   const d2=human?mk(W,H,g=>{g.translate(W/2,H);g.rotate(.75);g.translate(-W/2,-H);g.drawImage(im,0,H*.18,W,H*.82)}):null;
-  const d3=mk(W,H,g=>{g.fillStyle='rgba(70,8,4,.85)';g.beginPath();g.ellipse(W*.5,H*.78,W*.42,H*.16,0,0,7);g.fill();g.fillStyle='rgba(120,14,8,.6)';g.beginPath();g.ellipse(W*.44,H*.8,W*.22,H*.08,0,0,7);g.fill();
-    g.save();g.translate(W*.5,H*.62);g.rotate(human?Math.PI/2:Math.PI*.92);g.scale(.95,.95);g.drawImage(im,-W/2,-H/2);g.restore();g.globalCompositeOperation='source-atop';g.fillStyle='rgba(0,0,0,.25)';g.fillRect(0,0,W,H)});
+  // corpse: the floor drawing squashes this frame to half height, so it is painted pre-stretched to keep real proportions
+  const bb=(()=>{const c=mk(W,H,g=>g.drawImage(im,0,0)),d=c.getContext('2d').getImageData(0,0,W,H).data;let x0=W,y0=H,x1=0,y1=0;
+    for(let y=0;y<H;y++)for(let x=0;x<W;x++)if(d[(y*W+x)*4+3]>40){if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y}return[x0,y0,x1-x0+1,y1-y0+1]})();
+  const[bx,by,bw,bh]=bb;
+  const d3=mk(W,H,g=>{
+    g.fillStyle='rgba(60,6,3,.75)';g.beginPath();g.ellipse(W*.52,H*.88,W*.34,H*.09,0,0,7);g.fill();
+    g.fillStyle='rgba(110,12,6,.55)';g.beginPath();g.ellipse(W*.46,H*.89,W*.16,H*.05,0,0,7);g.fill();
+    g.save();
+    if(human){// on its side, head to the left: body length fits the width, thickness kept in proportion
+      const len=W*.9,k=len/bh,thick=bw*k*1.25;g.translate(W/2,H*.93-thick/2);g.rotate(-Math.PI/2);g.drawImage(im,bx,by,bw,bh,-thick/2,-len/2,thick,len)}
+    else{// on its back, legs in the air
+      const ww=W*.88,k=ww/bw,hh=bh*k*.95;g.translate(W/2,H*.95-hh/2);g.rotate(.06);g.scale(1,-1);g.drawImage(im,bx,by,bw,bh,-ww/2,-hh/2,ww,hh)}
+    g.restore();g.globalCompositeOperation='source-atop';g.fillStyle='rgba(0,0,0,.28)';g.fillRect(0,0,W,H)});
   return{d1:P.fog(d1),d2:d2&&P.fog(d2),d3:P.fog(d3)}}
 const _buildSprites=buildSprites;buildSprites=function(){_buildSprites();
   for(const[k,T]of Object.entries(NEWTYPES)){const key=T.img;if(SPR[key]&&SPR[key].d1)continue;const im=IMG[key];if(!im)continue;const P=procSet(im);
-    SPR[key]={fog:P.fog(im),red:P.red(im),...deathFrames(im,!!T.human)};if(!SPR[key].d2)delete SPR[key].d2;BODY[key]=T.low?1.3:1.15}};
+    SPR[key]={fog:P.fog(im),red:P.red(im),...deathFrames(im,!!T.human)};if(!SPR[key].d2)delete SPR[key].d2;BODY[key]=T.human?1.05:T.low?1.05:.95}};
 
 // ---- bite/sting screen effects for the new animals ----
 const _drawFX=drawFX;drawFX=function(t){if(S.fxq)for(const f of S.fxq){const T=ETYPES[f.k];if(T&&T.fx&&T.fx!==f.k)f.k=T.fx}return _drawFX(t)};
