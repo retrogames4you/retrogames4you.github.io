@@ -2885,16 +2885,16 @@ const _updateEnemiesWalk=updateEnemies;updateEnemies=function(t){_updateEnemiesW
     if(e.mT&&t-e.mT<e.mDur)continue;                               // still walking
     const adj=Math.abs(e.x-px)+Math.abs(e.y-py)===1;if(e.aware&&adj&&!T.ranged)continue;   // fists and teeth: busy fighting
     const idle=t-(e.still||0);
-    if(!e.aware){if(idle<T.move*(1.1+((e.id*97)%1)*.8))continue;
-      const dirs=[0,1,2,3].sort(()=>Math.random()-.5);if(e.wd!=null&&Math.random()<.65)dirs.unshift(e.wd);
-      for(const k of dirs){const nx=e.x+DX[k],ny=e.y+DY[k];if(Math.abs(nx-e.hx)+Math.abs(ny-e.hy)>4||!freeFor(e,nx,ny))continue;e.wd=k;e.face=Math.atan2(DY[k],DX[k]);stepTo(e,nx,ny,t,T);break}
+    if(!e.aware){if(idle<(e.pause||0))continue;e.pause=Math.random()<.12?T.move*(.6+Math.random()):0;
+      const dirs=[0,1,2,3].sort(()=>Math.random()-.5);if(e.wd!=null&&Math.random()<.8)dirs.unshift(e.wd);
+      for(const k of dirs){const nx=e.x+DX[k],ny=e.y+DY[k];if(Math.abs(nx-e.hx)+Math.abs(ny-e.hy)>7||!freeFor(e,nx,ny))continue;e.wd=k;e.face=Math.atan2(DY[k],DX[k]);stepTo(e,nx,ny,t,T);break}
       if(t-e.still>T.move*3)e.still=t;continue}
     if(T.ranged&&inLineOfFire(e,T.ranged)){if(idle<T.move*1.15)continue;   // strafe sideways between shots, keeping the line of fire
       const dx=px-e.x,dy=py-e.y,opts=Math.abs(dx)>Math.abs(dy)?[[0,1],[0,-1]]:[[1,0],[-1,0]];if(Math.random()<.5)opts.reverse();
       {const fwd=Math.abs(dx)>Math.abs(dy)?[Math.sign(dx),0]:[0,Math.sign(dy)],back=[-fwd[0],-fwd[1]];if(Math.hypot(dx,dy)>4)opts.push(fwd,back);else opts.push(back,fwd)}
       for(const[a,b]of opts){const nx=e.x+a,ny=e.y+b;if(!freeFor(e,nx,ny))continue;if(!los3D(nx+.5,ny+.5,gFH(nx,ny)+.55*T.scale,PL.x,PL.y,PL.z+PL.eyeH))continue;stepTo(e,nx,ny,t,T);e.lastMT=t;break}
       if(t-e.still>T.move*3)e.still=t;continue}
-    if(idle<T.move*1.6)continue;                                   // blocked or no path: shuffle toward the player anyway
+    if(idle<T.move*.5)continue;                                   // blocked or no path: shuffle toward the player anyway
     const opts=[0,1,2,3].map(k=>[e.x+DX[k],e.y+DY[k]]).filter(([x,y])=>freeFor(e,x,y)).sort((a,b)=>Math.hypot(a[0]-px,a[1]-py)-Math.hypot(b[0]-px,b[1]-py)+(Math.random()-.5)*1.5);
     if(opts.length)stepTo(e,opts[0][0],opts[0][1],t,T);else e.still=t}};
 
